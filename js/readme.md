@@ -1,0 +1,1 @@
+All of this programs work with the console or with local files (NODE REQUIRED)
