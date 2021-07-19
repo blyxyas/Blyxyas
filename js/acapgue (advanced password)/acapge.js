@@ -1,12 +1,15 @@
 /*
 El método de encryptación es simple de entender y crear pero dificil de entender, tendría varias contraseñas, podrían ser infinitas.
-El método APACGE es: Cada uno de los carácteres tiene un valor CharCode (ej: Æ --> 198), después se suman esos códigos y se buscan en esa suma dé un número específico (Si lo piensas bien, es parecido a la búsqueda del HASH de Bitcoin) En este caso es el 21061, pero dependiendo de la longitud (y dificultad) puede variar, cuantos más dígitos seguramente tengan más soluciones.
+El método APACGE es: Cada uno de los carácteres tiene un valor CharCode (ej: Æ --> 198), después se suman esos códigos y se buscan en esa suma de un número específico (Si lo piensas bien, es parecido a la búsqueda del HASH de Bitcoin) En este caso es el 21061, pero dependiendo de la longitud (y dificultad) puede variar, cuantos más dígitos seguramente tengan más soluciones.
 
 Número a buscar: 21061.
 Dígitos máximos a usar: 11.
 
-Con 11 dígitos el máximo me parece que es cerca de 100K, pero hay algunos márgenes con números especialmente difíciles de conseguir (Ej: 10K - 17K);
+Con 11 dígitos el máximo me parece que es cerca de 100K, pero hay algunos márgenes con números especialmente difíciles de conseguir (Ej: 10.5K - 17K);
 Ejemplo de respuesta: ▼þ▼þþþþdþu
+
+Uso:
+Ejecuta 'node acapge' y escribe tu intento en el archivo de texto llamado 'input.txt', en la consola se mostrará un número, deberás buscar que el número que aparezca en consola sea 21061, mediante los símbolos que tienen un código de carácter
 */
 
 fs = require('fs');
