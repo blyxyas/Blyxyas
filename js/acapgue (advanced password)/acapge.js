@@ -12,48 +12,52 @@ Uso:
 Ejecuta 'node acapge' y escribe tu intento en el archivo de texto llamado 'input.txt', en la consola se mostrará un número, deberás buscar que el número que aparezca en consola sea 21061, mediante los símbolos que tienen un código de carácter
 */
 
-fs = require('fs');
-win = false
-function sum(arr){
-    var sum = 0;
-    for (var i = 0; i< arr.length; i++){
-     sum += arr[i];
-    }
-    
-    console.log(sum);
-    return sum;
+fs = require("fs");
+win = false;
+function sum(arr) {
+  var sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  console.log(sum);
+  return sum;
 }
 
 function writing(file, content) {
-    fs.writeFile(file + '.txt', content, function (err) {
-        if (err) return console.log(err);
-        console.log(file + ' > ' + content);
-      });
+  fs.writeFile(file + ".txt", content, function (err) {
+    if (err) return console.log(err);
+    console.log(file + " > " + content);
+  });
 }
 
 function reading(file) {
-   var content =  fs.readFileSync('./'+file+'.txt');
-    return content;
+  var content = fs.readFileSync("./" + file + ".txt");
+  return content;
 }
 setInterval(() => {
-    if (win === false) {
-if (reading('inputs').toString().length > 11) {
-    console.log('The response is less than 11 characters...');
-}}
+  if (win === false) {
+    if (reading("inputs").toString().length > 11) {
+      console.log("The response is less than 11 characters...");
+    }
+  }
 
-n = 0;
-chars = [];
-do {
-   ip =  reading('inputs').toString();
-   chars.push(ip.charCodeAt(n));
-   console.log(chars);
-   n++;
-}
-while (n < ip.length);
-input = sum(chars)
+  n = 0;
+  chars = [];
+  do {
+    ip = reading("inputs").toString();
+    chars.push(ip.charCodeAt(n));
+    console.log(chars);
+    n++;
+  } while (n < ip.length);
+  input = sum(chars);
 
-if (input === 21061) {
-    win = true
-    console.log('Felicidades... Lo has hecho')
-    writing('inputs', 'Lo hiciste, felicidades, esta es mi cuenta bancaria ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓')
-}}, 1000);
+  if (input === 21061) {
+    win = true;
+    console.log("Felicidades... Lo has hecho");
+    writing(
+      "inputs",
+      "Lo hiciste, felicidades, esta es mi cuenta bancaria ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"
+    );
+  }
+}, 1000);
