@@ -1,3 +1,6 @@
+//Blyxyas 2021 Jul github.com/Blyxyas
+//*******************************************************************
+
 readline = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -51,11 +54,13 @@ function repm() {
   console.log(matrix[2]);
 }
 
+mark = "O";
+antimark = "✖";
 function select(y, x) {
   if (x > 3 || y > 3) {
     console.log(m.m3);
   } else {
-    matrix[y - 1][x - 1] = "X";
+    matrix[y - 1][x - 1] = mark;
     repm();
   }
 }
@@ -77,24 +82,51 @@ readline.on("line", (line) => {
   let win;
   let lost;
   if (
-    (matrix[0][0] === "X" && matrix[0][1] === "X" && matrix[0][2] === "X") ||
-    (matrix[1][0] === "X" && matrix[1][1] === "X" && matrix[1][2] === "X") ||
-    (matrix[2][0] === "X" && matrix[2][1] === "X" && matrix[2][2] === "X") ||
-    (matrix[1][0] === "X" && matrix[1][1] === "X" && matrix[1][2] === "X") ||
-    (matrix[2][0] === "X" && matrix[1][1] === "X" && matrix[0][2] === "X") ||
-    (matrix[0][0] === "X" && matrix[1][1] === "X" && matrix[2][2] === "X")
+    // Horizontal
+    (matrix[0][0] === mark && matrix[0][1] === mark && matrix[0][2] === mark) ||
+    (matrix[1][0] === mark && matrix[1][1] === mark && matrix[1][2] === mark) ||
+    (matrix[2][0] === mark && matrix[2][1] === mark && matrix[2][2] === mark) ||
+    // Vertical
+    (matrix[0][0] === mark && matrix[1][0] === mark && matrix[2][0] === mark) ||
+    (matrix[0][1] === mark && matrix[1][1] === mark && matrix[2][1] === mark) ||
+    (matrix[0][2] === mark && matrix[1][2] === mark && matrix[2][2] === mark) ||
+    // Diagonal
+    (matrix[1][0] === mark && matrix[1][1] === mark && matrix[1][2] === mark) ||
+    (matrix[2][0] === mark && matrix[1][1] === mark && matrix[0][2] === mark) ||
+    (matrix[0][0] === mark && matrix[1][1] === mark && matrix[2][2] === mark)
   ) {
     win = true;
   }
 
   // CHECK IA
   else if (
-    (matrix[0][0] === "O" && matrix[0][1] === "O" && matrix[0][2] === "O") ||
-    (matrix[1][0] === "O" && matrix[1][1] === "O" && matrix[1][2] === "O") ||
-    (matrix[2][0] === "O" && matrix[2][1] === "O" && matrix[2][2] === "O") ||
-    (matrix[1][0] === "O" && matrix[1][1] === "O" && matrix[1][2] === "O") ||
-    (matrix[2][0] === "O" && matrix[1][1] === "O" && matrix[0][2] === "O") ||
-    (matrix[0][0] === "O" && matrix[1][1] === "O" && matrix[2][2] === "O")
+    (matrix[0][0] === antimark &&
+      matrix[0][1] === antimark &&
+      matrix[0][2] === antimark) ||
+    (matrix[1][0] === antimark &&
+      matrix[1][1] === antimark &&
+      matrix[1][2] === antimark) ||
+    (matrix[2][0] === antimark &&
+      matrix[2][1] === antimark &&
+      matrix[2][2] === antimark) ||
+    (matrix[0][0] === antimark &&
+      matrix[1][0] === antimark &&
+      matrix[2][0] === antimark) ||
+    (matrix[0][1] === antimark &&
+      matrix[1][1] === antimark &&
+      matrix[2][1] === antimark) ||
+    (matrix[0][2] === antimark &&
+      matrix[1][2] === antimark &&
+      matrix[2][2] === antimark) ||
+    (matrix[1][0] === antimark &&
+      matrix[1][1] === antimark &&
+      matrix[1][2] === antimark) ||
+    (matrix[2][0] === antimark &&
+      matrix[1][1] === antimark &&
+      matrix[0][2] === antimark) ||
+    (matrix[0][0] === antimark &&
+      matrix[1][1] === antimark &&
+      matrix[2][2] === antimark)
   ) {
     lost = true;
   }
@@ -103,22 +135,40 @@ readline.on("line", (line) => {
     console.log(m.win);
   } else if (lost === true) {
     console.log(m.lost);
-  }
-  else {
+  } else {
     ai();
+    repm();
   }
 });
 
+// Main AI
+// This is my first AI fully made by me (/≧▽≦)/
+//*********************************
 
+function ai() {
+  n = 0;
+  m = 0;
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // DEFENSIVE
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // X X -
+    if (matrix[n][m] === mark && matrix[n][m + 1] === mark) {
+      // X X O
+      if (matrix[n][m + 2] !== antimark) {
+        matrix[n][m + 2] = antimark
+        return;
+    }
 
-
-      //*******************************************************************
-      // Main AI
-
-      // Copyright Blyxyas 2021 Jul github.com/Blyxyas
-      //*******************************************************************
-      
-      
-      function ai() {
- 
+    if (matrix[n][m] === mark && matrix[n][m + 2] === mark) {
+      if (matrix[n][m + 1] !== antimark) {
+        matrix[n][m + 1] = antimark;
+        return;
       }
+    }
+    if (matrix[n][m] === mark && matrix[n + 1][m] === mark) {
+      if (matrix[n + 2][m] !== antimark) {
+        matrix[n+ 2][m === antimark]
+      }
+    }
+  }
+}
