@@ -1,1 +1,1 @@
-(WIP)
+Tic Tac Toe is in progress
