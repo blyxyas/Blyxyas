@@ -153,33 +153,47 @@ readline.on("line", (line) => {
 //*********************************
 
 function ai() {
-  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  // DEFENSIVE
-  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  // X X -
-  if (matrix[0][0] === mark && matrix[0][1] === mark) {
-    // X X O
-    if (matrix[0][2] !== antimark) {
-      matrix[0][2] = antimark;
-      return;
+  // First, let's declare some variables to make easier the loop
+  y = 0;
+  x = 0;
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // DEFENSIVE
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // X X -
+    if (matrix[y][x] === mark && matrix[y][x + 1] === mark) {
+      // X X O
+      if (matrix[y][x + 2] !== antimark) {
+        matrix[y][x + 2] = antimark;
+        return;
+      }
     }
-  }
-  // X - X
-  if (matrix[0][0] === mark && matrix[0][2] === mark) {
-    if (matrix[0][1] !== antimark) {
-      matrix[0][1] = antimark;
-      return;
+    // X - X
+    if (matrix[y][x] === mark && matrix[y][x + 2] === mark) {
+      if (matrix[y][x + 1] !== antimark) {
+        matrix[y][x + 1] = antimark;
+        return;
+      }
     }
-  }
 
-  // X
-  // X
-  // -
+    // X
+    // X
+    // -
 
-  if (matrix[0][0] === mark && matrix[1][0] === mark) {
-    if (matrix[2][0] !== antimark) {
-      matrix[2][0] = antimark;
+    if (matrix[y][x] === mark && matrix[y + 1][x] === mark) {
+      if (matrix[y + 2][x] !== antimark) {
+        matrix[y + 2][x] = antimark;
+        return;
+      }
     }
-  }
 
+    // X
+    // -
+    // X
+
+    if (matrix[y][x] === mark && matrix[y + 2][x] === mark) {
+      if (matrix[y + 1][x] !== antimark) {
+        matrix[y + 1][x] = antimark;
+        return;
+      }
+    }
 }
