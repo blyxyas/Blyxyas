@@ -5,10 +5,10 @@ readline = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
+// ════════════════════════════
 // Language (0: Spanish 1: English):
 
-//*************************************
+//═════════════════════════════
 language = 0;
 
 let m;
@@ -18,6 +18,7 @@ spanish = {
   m3: "Tu argumento es mayor a 3 y/o no es un número",
   win: "Has ganado!",
   lost: "Has perdido!",
+  coord: "Esas coordenadas ya estaban marcadas",
 };
 
 english = {
@@ -26,6 +27,7 @@ english = {
   m3: "Your argument is higher than 3 or it isn't a number",
   win: "You won!",
   lost: "You lost!",
+  coord: "Those coordinates were already marked!",
 };
 
 switch (language) {
@@ -54,19 +56,25 @@ function repm() {
   console.log(matrix[2]);
 }
 
+repm();
+
 mark = "O";
 antimark = "✖";
 function select(y, x) {
   if (x > 3 || y > 3) {
     console.log(m.m3);
   } else {
-    matrix[y - 1][x - 1] = mark;
-    repm();
+    if (matrix[y - 1][x - 1] === mark || matrix[y - 1][x - 1] === antimark) {
+      console.log(m.coord);
+      return;
+    } else {
+      matrix[y - 1][x - 1] = mark;
+      repm();
+    }
   }
 }
 
 // @@@@@@@@@@@@@@@ Main:
-repm();
 readline.on("line", (line) => {
   if (line === "exit") {
     process.exit();
@@ -74,8 +82,6 @@ readline.on("line", (line) => {
 
   coord = line.split(",");
   select(coord[0], coord[1]);
-
-  // Check if win state
 
   // CHECK PLAYER
 
@@ -136,6 +142,7 @@ readline.on("line", (line) => {
   } else if (lost === true) {
     console.log(m.lost);
   } else {
+    console.log("AI:");
     ai();
     repm();
   }
@@ -146,29 +153,33 @@ readline.on("line", (line) => {
 //*********************************
 
 function ai() {
-  n = 0;
-  m = 0;
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    // DEFENSIVE
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    // X X -
-    if (matrix[n][m] === mark && matrix[n][m + 1] === mark) {
-      // X X O
-      if (matrix[n][m + 2] !== antimark) {
-        matrix[n][m + 2] = antimark
-        return;
-    }
-
-    if (matrix[n][m] === mark && matrix[n][m + 2] === mark) {
-      if (matrix[n][m + 1] !== antimark) {
-        matrix[n][m + 1] = antimark;
-        return;
-      }
-    }
-    if (matrix[n][m] === mark && matrix[n + 1][m] === mark) {
-      if (matrix[n + 2][m] !== antimark) {
-        matrix[n+ 2][m === antimark]
-      }
+  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  // DEFENSIVE
+  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  // X X -
+  if (matrix[0][0] === mark && matrix[0][1] === mark) {
+    // X X O
+    if (matrix[0][2] !== antimark) {
+      matrix[0][2] = antimark;
+      return;
     }
   }
+  // X - X
+  if (matrix[0][0] === mark && matrix[0][2] === mark) {
+    if (matrix[0][1] !== antimark) {
+      matrix[0][1] = antimark;
+      return;
+    }
+  }
+
+  // X
+  // X
+  // -
+
+  if (matrix[0][0] === mark && matrix[1][0] === mark) {
+    if (matrix[2][0] !== antimark) {
+      matrix[2][0] = antimark;
+    }
+  }
+
 }
