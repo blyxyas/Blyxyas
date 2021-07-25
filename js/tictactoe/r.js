@@ -251,6 +251,69 @@ function ai(state) {
       // X
       //   X
       //     -
+
+      if (matrix[0][0] === mark && matrix[1][0] === mark) {
+        if (matrix[2][2] !== antimark) {
+          matrix[2][2] = antimark;
+          return;
+        }
+      }
+
+      //    X
+      //   X
+      //  -
+
+      if (matrix[0][2] === mark && matrix[1][1] === mark) {
+        if (matrix[2][0] !== antimark) {
+          matrix[2][0] = antimark;
+          return;
+        }
+      }
+
+      // X
+      //   -
+      //     X
+
+      if (matrix[0][0] === mark && matrix[2][2] === mark) {
+        if (matrix[1][1] !== antimark) {
+          matrix[1][1] = antimark;
+          return;
+        }
+      }
+
+      // -
+      //  X
+      //   X
+
+      if (matrix[1][1] === mark && matrix[2][2] === mark) {
+        if (matrix[0][0] !== antimark) {
+          matrix[0][0] = antimark;
+          return;
+        }
+      }
+
+      //   X
+      //  -
+      // X
+
+      if (matrix[0][2] === mark && matrix[2][0] === mark) {
+        if (matrix[1][1] !== antimark) {
+          matrix[1][1] = antimark;
+          return;
+        }
+      }
+
+      //   -
+      //  X
+      // X
+
+      if (matrix[1][1] === mark && matrix[2][0] === mark) {
+        if (matrix[0][2] !== antimark) {
+          matrix[0][2] = antimark;
+          return;
+        }
+      }
+
       y++;
     }
   }
