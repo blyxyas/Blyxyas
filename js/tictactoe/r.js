@@ -167,13 +167,14 @@ readline.on("line", (line) => {
       ai(state);
       repm();
       turn++;
+      console.log(turn);
     }
     if (clearing === true) {
       console.clear();
       process();
-    }
-    else {
+    } else {
       process();
+    }
   }
 });
 
@@ -236,6 +237,20 @@ function ai(state) {
           return;
         }
       }
+
+      // -
+      // X
+      // X
+      if (matrix[1][x] === mark && matrix[2][x] === mark) {
+        if (matrix[0][x] !== antimark) {
+          matrix[0][x] = antimark;
+          return;
+        }
+      }
+
+      // X
+      //   X
+      //     -
       y++;
     }
   }
@@ -247,8 +262,7 @@ function ai(state) {
       // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
       // OFFENSIVE
       // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-      n++;
+      y++;
     }
   }
 }
