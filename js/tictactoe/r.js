@@ -33,7 +33,7 @@ antimark = "✖";
 clearing = true;
 
 // Thx for reading this!
-// My AI is not very good, but it's a start jeje.
+// My AI is not very mark, but it's a start jeje.
 // Btw, I'm not a javascript expert, so if you have any suggestion, please let me know!
 //Blyxyas 2021 Jul github.com/Blyxyas
 //*******************************************************************
@@ -92,16 +92,12 @@ function repm() {
 
 repm();
 function select(y, x) {
-  if (x > 3 || y > 3) {
-    console.log(m.m3);
+  if (matrix[y - 1][x - 1] === mark || matrix[y - 1][x - 1] === antimark) {
+    console.log(m.coord);
+    return;
   } else {
-    if (matrix[y - 1][x - 1] === mark || matrix[y - 1][x - 1] === antimark) {
-      console.log(m.coord);
-      return;
-    } else {
-      matrix[y - 1][x - 1] = mark;
-      repm();
-    }
+    matrix[y - 1][x - 1] = mark;
+    repm();
   }
 }
 
@@ -205,134 +201,129 @@ function ai(state) {
   }
 }
 
-function aitemplate(good, antigood) {
-
-if (matrix[y][x] === good && matrix[y][x + 1] === good) {
-  if (matrix[y][x + 2] !== antigood) {
-    matrix[y][x + 2] = antigood;
-    return;
-  }
-}
-// X - X
-if (matrix[y][x] === good && matrix[y][x + 2] === good) {
-  if (matrix[y][x + 1] !== antigood) {
-    matrix[y][x + 1] = antigood;
-    return;
-  }
-}
-
-// X
-// X
-// -
-
-if (matrix[y][x] === good && matrix[y + 1][x] === good) {
-  if (matrix[y + 2][x] !== antigood) {
-    matrix[y + 2][x] = antigood;
-    return;
-  }
-}
-
-// X
-// -
-// X
-
-if (matrix[y][x] === good && matrix[y + 2][x] === good) {
-  if (matrix[y + 1][x] !== antigood) {
-    matrix[y + 1][x] = antigood;
-    return;
-  }
-}
-
-// -
-// X
-// X
-if (matrix[1][x] === good && matrix[2][x] === good) {
-  if (matrix[0][x] !== antigood) {
-    matrix[0][x] = antigood;
-    return;
-  }
-}
-
-// X
-//   X
-//     -
-
-if (matrix[0][0] === good && matrix[1][0] === good) {
-  if (matrix[2][2] !== antigood) {
-    matrix[2][2] = antigood;
-    return;
-  }
-}
-
-//    X
-//   X
-//  -
-
-if (matrix[0][2] === good && matrix[1][1] === good) {
-  if (matrix[2][0] !== antigood) {
-    matrix[2][0] = antigood;
-    return;
-  }
-}
-
-// X
-//   -
-//     X
-
-if (matrix[0][0] === good && matrix[2][2] === good) {
-  if (matrix[1][1] !== antigood) {
-    matrix[1][1] = antigood;
-    return;
-  }
-}
-
-// -
-//  X
-//   X
-
-if (matrix[1][1] === good && matrix[2][2] === good) {
-  if (matrix[0][0] !== antigood) {
-    matrix[0][0] = antigood;
-    return;
-  }
-}
-
-//   X
-//  -
-// X
-
-if (matrix[0][2] === good && matrix[2][0] === good) {
-  if (matrix[1][1] !== antigood) {
-    matrix[1][1] = antigood;
-    return;
-  }
-}
-
-//   -
-//  X
-// X
-
-if (matrix[1][1] === good && matrix[2][0] === good) {
-  if (matrix[0][2] !== antigood) {
-    matrix[0][2] = antigood;
-    return;
-  }
-}}
-
 function deffensive() {
   y = 0;
   x = 0;
-  if (turn === 0) {
-    return;
-  } else {
-    while (y < 3) {
-      // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-      // DEFENSIVE
-      // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-      // X X -
-      aitemplate(mark, antimark)
-      y++;
+
+  while (y < 3) {
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // DEFENSIVE
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // X X -
+    if (matrix[y][x] === mark && matrix[y][x + 1] === mark) {
+      if (matrix[y][x + 2] !== antimark) {
+        matrix[y][x + 2] = antimark;
+        return;
+      }
     }
+    // X - X
+    if (matrix[y][x] === mark && matrix[y][x + 2] === mark) {
+      if (matrix[y][x + 1] !== antimark) {
+        matrix[y][x + 1] = antimark;
+        return;
+      }
+    }
+
+    // X
+    // X
+    // -
+    while (x < 3) {
+      if (matrix[y][x] === mark && matrix[y + 1][x] === mark) {
+        if (matrix[y + 2][x] !== antimark) {
+          matrix[y + 2][x] = antimark;
+          return;
+        }
+      }
+
+      // X
+      // -
+      // X
+
+      if (matrix[y][x] === mark && matrix[y + 2][x] === mark) {
+        if (matrix[y + 1][x] !== antimark) {
+          matrix[y + 1][x] = antimark;
+          return;
+        }
+      }
+
+      // -
+      // X
+      // X
+      if (matrix[1][x] === mark && matrix[2][x] === mark) {
+        if (matrix[0][x] !== antimark) {
+          matrix[0][x] = antimark;
+          return;
+        }
+      }
+      x++;
+    }
+
+    // X
+    //   X
+    //     -
+
+    if (matrix[0][0] === mark && matrix[1][1] === mark) {
+      if (matrix[2][2] !== antimark) {
+        matrix[2][2] = antimark;
+        return;
+      }
+    }
+
+    //    X
+    //   X
+    //  -
+
+    if (matrix[0][2] === mark && matrix[1][1] === mark) {
+      if (matrix[2][0] !== antimark) {
+        matrix[2][0] = antimark;
+        return;
+      }
+    }
+
+    // X
+    //   -
+    //     X
+
+    if (matrix[0][0] === mark && matrix[2][2] === mark) {
+      if (matrix[1][1] !== antimark) {
+        matrix[1][1] = antimark;
+        return;
+      }
+    }
+
+    // -
+    //  X
+    //   X
+
+    if (matrix[1][1] === mark && matrix[2][2] === mark) {
+      if (matrix[0][0] !== antimark) {
+        matrix[0][0] = antimark;
+        return;
+      }
+    }
+
+    //   X
+    //  -
+    // X
+
+    if (matrix[0][2] === mark && matrix[2][0] === mark) {
+      if (matrix[1][1] !== antimark) {
+        matrix[1][1] = antimark;
+        return;
+      }
+    }
+
+    //   -
+    //  X
+    // X
+
+    if (matrix[1][1] === mark && matrix[2][0] === mark) {
+      if (matrix[0][2] !== antimark) {
+        matrix[0][2] = antimark;
+        return;
+      }
+    }
+    y++;
   }
 }
 
@@ -342,15 +333,129 @@ function offensive() {
   // (TODO) OFFENSIVE
   // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-  if (turn <= 1) {
-    y = Math.floor(Math.random() * 3);
-    x = Math.floor(Math.random() * 3);
-    
-    while (matrix[y][x] === mark || matrix[y][x] === antimark) {
-      y = Math.floor(Math.random() * 3);
-      x = Math.floor(Math.random() * 3);
+  y = 0;
+  x = 0;
+  while (y < 3) {
+    // X X -
+    if (matrix[y][x] === antimark && matrix[y][x + 1] === antimark) {
+      if (matrix[y][x + 2] !== mark) {
+        matrix[y][x + 2] = antimark;
+        return;
+      }
     }
-    } else {
-      
+    // X - X
+    if (matrix[y][x] === antimark && matrix[y][x + 2] === antimark) {
+      if (matrix[y][x + 1] !== mark) {
+        matrix[y][x + 1] = antimark;
+        return;
+      }
+    }
+    // - X X
+    if (matrix[y][x + 1] === antimark && matrix[y][x + 2] === antimark) {
+      if (matrix[y][x] !== mark) {
+        matrix[y][x] = antimark;
+        return;
+      }
+    }
+
+
+    // X
+    // X
+    // -
+
+    if (matrix[y][x] === antimark && matrix[y + 1][x] === antimark) {
+      if (matrix[y + 2][x] !== mark) {
+        matrix[y + 2][x] = antimark;
+        return;
+      }
+    }
+
+    // X
+    // -
+    // X
+
+    if (matrix[y][x] === antimark && matrix[y + 2][x] === antimark) {
+      if (matrix[y + 1][x] !== mark) {
+        matrix[y + 1][x] = antimark;
+        return;
+      }
+    }
+    y++;
+  }
+
+  // -
+  // X
+  // X
+  if (matrix[1][x] === antimark && matrix[2][x] === antimark) {
+    if (matrix[0][x] !== mark) {
+      matrix[0][x] = antimark;
+      return;
     }
   }
+
+  // X
+  //   X
+  //     -
+
+  if (matrix[0][0] === antimark && matrix[1][0] === antimark) {
+    if (matrix[2][2] !== mark) {
+      matrix[2][2] = antimark;
+      return;
+    }
+  }
+
+  //    X
+  //   X
+  //  -
+
+  if (matrix[0][2] === antimark && matrix[1][1] === antimark) {
+    if (matrix[2][0] !== mark) {
+      matrix[2][0] = antimark;
+      return;
+    }
+  }
+
+  // X
+  //   -
+  //     X
+
+  if (matrix[0][0] === antimark && matrix[2][2] === antimark) {
+    if (matrix[1][1] !== mark) {
+      matrix[1][1] = antimark;
+      return;
+    }
+  }
+
+  // -
+  //  X
+  //   X
+
+  if (matrix[1][1] === antimark && matrix[2][2] === antimark) {
+    if (matrix[0][0] !== mark) {
+      matrix[0][0] = antimark;
+      return;
+    }
+  }
+
+  //   X
+  //  -
+  // X
+
+  if (matrix[0][2] === antimark && matrix[2][0] === antimark) {
+    if (matrix[1][1] !== mark) {
+      matrix[1][1] = antimark;
+      return;
+    }
+  }
+
+  //   -
+  //  X
+  // X
+
+  if (matrix[1][1] === antimark && matrix[2][0] === antimark) {
+    if (matrix[0][2] !== mark) {
+      matrix[0][2] = antimark;
+      return;
+    }
+  }
+}
