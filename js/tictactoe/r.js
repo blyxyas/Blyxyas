@@ -1,3 +1,19 @@
+// README FIRST!!!!!
+// This is a game of Tic Tac Toe.
+// You play against my AI.
+// Maybe I can create a multiplayer mode idk
+// Soo... First, select your language in this variable:
+
+// "es" = Spanish, "en" = English
+language = "es";
+
+// Important !!! ↓
+// Change the variable to deff if you want to use the deffensive algorithm, or off if you want to use the offensive algorithm! (Are the same process but in different order)
+state = "deff"
+
+// Thx for reading this!
+// My AI is not very good, but it's a start jeje.
+
 //Blyxyas 2021 Jul github.com/Blyxyas
 //*******************************************************************
 
@@ -5,11 +21,6 @@ readline = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-// ════════════════════════════
-// Language (0: Spanish 1: English):
-
-//═════════════════════════════
-language = 0;
 
 let m;
 spanish = {
@@ -31,10 +42,10 @@ english = {
 };
 
 switch (language) {
-  case 0:
+  case "es":
     m = spanish;
     break;
-  case 1:
+  case "en":
     m = english;
 }
 
@@ -143,8 +154,9 @@ readline.on("line", (line) => {
     console.log(m.lost);
   } else {
     console.log("AI:");
-    ai();
+    ai(state);
     repm();
+    turn++;
   }
 });
 
@@ -152,48 +164,74 @@ readline.on("line", (line) => {
 // This is my first AI fully made by me (/≧▽≦)/
 //*********************************
 
-function ai() {
-  // First, let's declare some variables to make easier the loop
-  y = 0;
-  x = 0;
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    // DEFENSIVE
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    // X X -
-    if (matrix[y][x] === mark && matrix[y][x + 1] === mark) {
-      // X X O
-      if (matrix[y][x + 2] !== antimark) {
-        matrix[y][x + 2] = antimark;
-        return;
-      }
-    }
-    // X - X
-    if (matrix[y][x] === mark && matrix[y][x + 2] === mark) {
-      if (matrix[y][x + 1] !== antimark) {
-        matrix[y][x + 1] = antimark;
-        return;
-      }
-    }
+function ai(state) {
+  switch (state) {
+    case "deff":
+      deffensive();
+      offensive();
+      break;
+    case "off":
+      offensive();
+      deffensive();
+  }
 
-    // X
-    // X
-    // -
-
-    if (matrix[y][x] === mark && matrix[y + 1][x] === mark) {
-      if (matrix[y + 2][x] !== antimark) {
-        matrix[y + 2][x] = antimark;
-        return;
+  function deffensive() {
+    y = 0;
+    x = 0;
+    while (y < 3) {
+      // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+      // DEFENSIVE
+      // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+      // X X -
+      if (matrix[y][x] === mark && matrix[y][x + 1] === mark) {
+        // X X O
+        if (matrix[y][x + 2] !== antimark) {
+          matrix[y][x + 2] = antimark;
+          return;
+        }
       }
-    }
-
-    // X
-    // -
-    // X
-
-    if (matrix[y][x] === mark && matrix[y + 2][x] === mark) {
-      if (matrix[y + 1][x] !== antimark) {
-        matrix[y + 1][x] = antimark;
-        return;
+      // X - X
+      if (matrix[y][x] === mark && matrix[y][x + 2] === mark) {
+        if (matrix[y][x + 1] !== antimark) {
+          matrix[y][x + 1] = antimark;
+          return;
+        }
       }
+
+      // X
+      // X
+      // -
+
+      if (matrix[y][x] === mark && matrix[y + 1][x] === mark) {
+        if (matrix[y + 2][x] !== antimark) {
+          matrix[y + 2][x] = antimark;
+          return;
+        }
+      }
+
+      // X
+      // -
+      // X
+
+      if (matrix[y][x] === mark && matrix[y + 2][x] === mark) {
+        if (matrix[y + 1][x] !== antimark) {
+          matrix[y + 1][x] = antimark;
+          return;
+        }
+      }
+      y++;
     }
+  }
+
+  function offensive() {
+    y = 0;
+    x = 0;
+    while (y < 3) {
+      // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+      // OFFENSIVE
+      // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+      n++;
+    }
+  }
 }
