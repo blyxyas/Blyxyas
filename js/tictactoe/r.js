@@ -1,3 +1,9 @@
+let y;
+let x;
+let matrix;
+let mark;
+let antimark;
+
 // README FIRST!!!!!
 // This is a game of Tic Tac Toe.
 // You play against my AI.
@@ -10,6 +16,11 @@ language = "es";
 // Important !!! ↓
 // Change the variable to deff if you want to use the deffensive algorithm, or off if you want to use the offensive algorithm! (Are the same process but in different order)
 state = "deff";
+
+// ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+// ⚠️ See below ⚠️ ⚠️ See below ⚠️ ⚠️ See below ⚠️ ⚠️ See below ⚠️ ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+// ⚠️⚠️ WARNING!! DO NOT CHOOSE 3,1 IN THE FIRST TURN! It will bug, for some reason. 
+// ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 
 // If you want to customize some things, just change the variables below!:
 
@@ -125,7 +136,7 @@ readline.on("line", (line) => {
   }
 
   // CHECK IA
-  if (
+  else if (
     (matrix[0][0] === antimark &&
       matrix[0][1] === antimark &&
       matrix[0][2] === antimark) ||
@@ -154,21 +165,27 @@ readline.on("line", (line) => {
       matrix[1][1] === antimark &&
       matrix[2][2] === antimark)
   ) {
-    console.log(m.lost);
+    lost = true;
   }
 
-  function process() {
-    console.log("AI:");
-    ai(state);
-    repm();
-    turn++;
-    console.log(turn);
-  }
-  if (clearing === true) {
-    console.clear();
-    process();
+  if (win === true) {
+    console.log(m.win);
+  } else if (lost === true) {
+    console.log(m.lost);
   } else {
-    process();
+    function process() {
+      console.log("AI:");
+      ai(state);
+      repm();
+      turn++;
+      console.log(turn);
+    }
+    if (clearing === true) {
+      console.clear();
+      process();
+    } else {
+      process();
+    }
   }
 });
 
@@ -186,10 +203,14 @@ function ai(state) {
       offensive();
       deffensive();
   }
+}
 
-  function deffensive() {
-    y = 0;
-    x = 0;
+function deffensive() {
+  y = 0;
+  x = 0;
+  if (turn === 0) {
+    return;
+  } else {
     while (y < 3) {
       // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
       // DEFENSIVE
@@ -311,15 +332,8 @@ function ai(state) {
       y++;
     }
   }
+}
 
-  function offensive() {
-    y = 0;
-    x = 0;
-    while (y < 3) {
-      // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-      // OFFENSIVE
-      // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-      y++;
-    }
-  }
+function offensive() {
+  
 }
