@@ -125,7 +125,7 @@ readline.on("line", (line) => {
   }
 
   // CHECK IA
-  else if (
+  if (
     (matrix[0][0] === antimark &&
       matrix[0][1] === antimark &&
       matrix[0][2] === antimark) ||
@@ -157,10 +157,11 @@ readline.on("line", (line) => {
     lost = true;
   }
 
+  if (lost === true) {
+    console.log(m.lost);}
+
   if (win === true) {
     console.log(m.win);
-  } else if (lost === true) {
-    console.log(m.lost);
   } else {
     function process() {
       console.log("AI:");
@@ -313,7 +314,6 @@ function ai(state) {
           return;
         }
       }
-
       y++;
     }
   }
