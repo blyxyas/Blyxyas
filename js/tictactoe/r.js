@@ -9,13 +9,26 @@ language = "es";
 
 // Important !!! ↓
 // Change the variable to deff if you want to use the deffensive algorithm, or off if you want to use the offensive algorithm! (Are the same process but in different order)
-state = "deff"
+state = "deff";
+
+// If you want to customize some things, just change the variables below!:
+
+// Player's mark:
+mark = "O";
+// AI's mark:
+antimark = "✖";
+
+// Clear console before each turn ?:
+clearing = true;
 
 // Thx for reading this!
 // My AI is not very good, but it's a start jeje.
 
 //Blyxyas 2021 Jul github.com/Blyxyas
 //*******************************************************************
+
+// Some auxiliar variables:
+turn = 0;
 
 readline = require("readline").createInterface({
   input: process.stdin,
@@ -53,7 +66,6 @@ switch (language) {
 console.log(m.intro);
 //*************************************
 
-marked = false;
 // Matrix:
 x1 = ["*", "*", "*"];
 x2 = ["*", "*", "*"];
@@ -68,9 +80,6 @@ function repm() {
 }
 
 repm();
-
-mark = "O";
-antimark = "✖";
 function select(y, x) {
   if (x > 3 || y > 3) {
     console.log(m.m3);
@@ -153,10 +162,18 @@ readline.on("line", (line) => {
   } else if (lost === true) {
     console.log(m.lost);
   } else {
-    console.log("AI:");
-    ai(state);
-    repm();
-    turn++;
+    function process() {
+      console.log("AI:");
+      ai(state);
+      repm();
+      turn++;
+    }
+    if (clearing === true) {
+      console.clear();
+      process();
+    }
+    else {
+      process();
   }
 });
 
