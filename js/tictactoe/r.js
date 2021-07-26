@@ -5,6 +5,14 @@ let mark;
 let antimark;
 
 // README FIRST!!!!!
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// IMPORTANT
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// THIS PROJECT IS CANCELLED/IN PAUSE
+// Sorry for the inconvenience
+// (There are important bugs, and I don't know how to fix them (o′┏▽┓｀o) )
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 // This is a game of Tic Tac Toe.
 // You play against my AI.
 // Maybe I can create a multiplayer mode idk
@@ -91,12 +99,12 @@ function repm() {
 }
 
 repm();
-function select(y, x) {
-  if (matrix[y - 1][x - 1] === mark || matrix[y - 1][x - 1] === antimark) {
+function select(ym, xm) {
+  if (matrix[ym - 1][xm - 1] === mark || matrix[ym - 1][xm - 1] === antimark) {
     console.log(m.coord);
     return;
   } else {
-    matrix[y - 1][x - 1] = mark;
+    matrix[ym - 1][xm - 1] = mark;
     repm();
   }
 }
@@ -213,6 +221,7 @@ function deffensive() {
     if (matrix[y][x] === mark && matrix[y][x + 1] === mark) {
       if (matrix[y][x + 2] !== antimark) {
         matrix[y][x + 2] = antimark;
+        edited = true;
         return;
       }
     }
@@ -220,6 +229,7 @@ function deffensive() {
     if (matrix[y][x] === mark && matrix[y][x + 2] === mark) {
       if (matrix[y][x + 1] !== antimark) {
         matrix[y][x + 1] = antimark;
+        edited = true;
         return;
       }
     }
@@ -231,6 +241,7 @@ function deffensive() {
       if (matrix[y][x] === mark && matrix[y + 1][x] === mark) {
         if (matrix[y + 2][x] !== antimark) {
           matrix[y + 2][x] = antimark;
+          edited = true;
           return;
         }
       }
@@ -242,6 +253,7 @@ function deffensive() {
       if (matrix[y][x] === mark && matrix[y + 2][x] === mark) {
         if (matrix[y + 1][x] !== antimark) {
           matrix[y + 1][x] = antimark;
+          edited = true;
           return;
         }
       }
@@ -252,6 +264,7 @@ function deffensive() {
       if (matrix[1][x] === mark && matrix[2][x] === mark) {
         if (matrix[0][x] !== antimark) {
           matrix[0][x] = antimark;
+          edited = true;
           return;
         }
       }
@@ -265,6 +278,7 @@ function deffensive() {
     if (matrix[0][0] === mark && matrix[1][1] === mark) {
       if (matrix[2][2] !== antimark) {
         matrix[2][2] = antimark;
+        edited = true;
         return;
       }
     }
@@ -276,6 +290,7 @@ function deffensive() {
     if (matrix[0][2] === mark && matrix[1][1] === mark) {
       if (matrix[2][0] !== antimark) {
         matrix[2][0] = antimark;
+        edited = true;
         return;
       }
     }
@@ -287,6 +302,7 @@ function deffensive() {
     if (matrix[0][0] === mark && matrix[2][2] === mark) {
       if (matrix[1][1] !== antimark) {
         matrix[1][1] = antimark;
+        edited = true;
         return;
       }
     }
@@ -298,6 +314,7 @@ function deffensive() {
     if (matrix[1][1] === mark && matrix[2][2] === mark) {
       if (matrix[0][0] !== antimark) {
         matrix[0][0] = antimark;
+        edited = true;
         return;
       }
     }
@@ -309,6 +326,7 @@ function deffensive() {
     if (matrix[0][2] === mark && matrix[2][0] === mark) {
       if (matrix[1][1] !== antimark) {
         matrix[1][1] = antimark;
+        edited = true;
         return;
       }
     }
@@ -320,6 +338,7 @@ function deffensive() {
     if (matrix[1][1] === mark && matrix[2][0] === mark) {
       if (matrix[0][2] !== antimark) {
         matrix[0][2] = antimark;
+        edited = true;
         return;
       }
     }
@@ -340,6 +359,7 @@ function offensive() {
     if (matrix[y][x] === antimark && matrix[y][x + 1] === antimark) {
       if (matrix[y][x + 2] !== mark) {
         matrix[y][x + 2] = antimark;
+        edited = true;
         return;
       }
     }
@@ -347,6 +367,7 @@ function offensive() {
     if (matrix[y][x] === antimark && matrix[y][x + 2] === antimark) {
       if (matrix[y][x + 1] !== mark) {
         matrix[y][x + 1] = antimark;
+        edited = true;
         return;
       }
     }
@@ -354,10 +375,10 @@ function offensive() {
     if (matrix[y][x + 1] === antimark && matrix[y][x + 2] === antimark) {
       if (matrix[y][x] !== mark) {
         matrix[y][x] = antimark;
+        edited = true;
         return;
       }
     }
-
 
     // X
     // X
@@ -366,6 +387,7 @@ function offensive() {
     if (matrix[y][x] === antimark && matrix[y + 1][x] === antimark) {
       if (matrix[y + 2][x] !== mark) {
         matrix[y + 2][x] = antimark;
+        edited = true;
         return;
       }
     }
@@ -377,6 +399,7 @@ function offensive() {
     if (matrix[y][x] === antimark && matrix[y + 2][x] === antimark) {
       if (matrix[y + 1][x] !== mark) {
         matrix[y + 1][x] = antimark;
+        edited = true;
         return;
       }
     }
@@ -389,6 +412,7 @@ function offensive() {
   if (matrix[1][x] === antimark && matrix[2][x] === antimark) {
     if (matrix[0][x] !== mark) {
       matrix[0][x] = antimark;
+      edited = true;
       return;
     }
   }
@@ -400,6 +424,7 @@ function offensive() {
   if (matrix[0][0] === antimark && matrix[1][0] === antimark) {
     if (matrix[2][2] !== mark) {
       matrix[2][2] = antimark;
+      edited = true;
       return;
     }
   }
@@ -411,6 +436,7 @@ function offensive() {
   if (matrix[0][2] === antimark && matrix[1][1] === antimark) {
     if (matrix[2][0] !== mark) {
       matrix[2][0] = antimark;
+      edited = true;
       return;
     }
   }
@@ -422,6 +448,7 @@ function offensive() {
   if (matrix[0][0] === antimark && matrix[2][2] === antimark) {
     if (matrix[1][1] !== mark) {
       matrix[1][1] = antimark;
+      edited = true;
       return;
     }
   }
@@ -433,6 +460,7 @@ function offensive() {
   if (matrix[1][1] === antimark && matrix[2][2] === antimark) {
     if (matrix[0][0] !== mark) {
       matrix[0][0] = antimark;
+      edited = true;
       return;
     }
   }
@@ -444,6 +472,7 @@ function offensive() {
   if (matrix[0][2] === antimark && matrix[2][0] === antimark) {
     if (matrix[1][1] !== mark) {
       matrix[1][1] = antimark;
+      edited = true;
       return;
     }
   }
@@ -455,6 +484,7 @@ function offensive() {
   if (matrix[1][1] === antimark && matrix[2][0] === antimark) {
     if (matrix[0][2] !== mark) {
       matrix[0][2] = antimark;
+      edited = true;
       return;
     }
   }
