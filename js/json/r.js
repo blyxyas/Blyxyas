@@ -1,4 +1,22 @@
-fs = require('fs');
-PATH = "./data.json"
+// import filesystem from node
+fs = require("fs");
+PATH = "./data.json";
 
-console.log(fs.readFileSync(PATH).toString())
+// Write to file (in PATH)
+function writing(message) {
+  fs.writeFile(PATH, message, function (err) {
+    if (err) throw err;
+  });
+}
+
+content = fs.readFileSync(PATH).toString();
+writing()
+
+/**
+* MyMethod
+* * Important information is highlighted
+* ! Deprecated method, do not use
+* ? Blue
+* TODO:
+* @param MyParam
+**/

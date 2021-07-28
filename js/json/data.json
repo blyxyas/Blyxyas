@@ -1,6 +1,7 @@
 {
-  "type": "string",
-  "body": ["Hi! This is just a example of a body!"],
-  "description": "This is just a example of a description!",
-  "i": null
+  "d": {
+    "type": "string",
+    "body": ["Hi! This is just a example of a body!"],
+    "description": "This is just a example of a description!"
+  }
 }
