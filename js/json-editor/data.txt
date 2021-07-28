@@ -1,7 +1,5 @@
-{
-  "d": {
+{"d": {
     "type": "string",
     "body": ["Hi! This is just a example of a body!"],
     "description": "idk some parameters"
   }
-}
