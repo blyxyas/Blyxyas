@@ -1,2 +1,5 @@
-import * as data from ('./example-data.json');
-console.log("data = " + data)
+fs = require("fs");
+path = "./data.json";
+
+const content = fs.readFileSync("");
+console.log(content.toString());
