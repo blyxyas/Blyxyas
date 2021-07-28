@@ -1,5 +1,4 @@
-fs = require("fs");
-path = "./data.json";
+fs = require('fs');
+PATH = "./data.json"
 
-const content = fs.readFileSync("");
-console.log(content.toString());
+console.log(fs.readFileSync(PATH).toString())
