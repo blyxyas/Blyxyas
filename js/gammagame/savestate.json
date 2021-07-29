@@ -1,6 +1,6 @@
 {
-  "_comment": "./readme.txt#savestates",
+  "_comment": "check readme.txt#savestates section",
   "x": {
-    "money"
+    "money": 0
   }
 }
