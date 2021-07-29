@@ -1,0 +1,14 @@
+{
+    "commands": [
+       "save",
+       "inv",
+       "help",
+       "exit",
+       "quit",
+       "stats",
+       "cat"
+    ],
+    "inventory": [
+
+    ]
+}
