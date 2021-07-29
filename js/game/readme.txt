@@ -1,1 +1,0 @@
-This is a readme if you want to download the source code, if you're in Github, you can open the README.md file

@@ -9,7 +9,7 @@ rl = require("readline").createInterface({
 // Import the save file, if it exists, else, create a file named "savestate" and start the game.
 
 if (fs.existsSync("./savestate.json")) {
-    console.log("Si")
+    console.log("savestate file detected in the current repository")
 }
 savestate = require("./savestate.json");
 
