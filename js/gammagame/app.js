@@ -1,19 +1,27 @@
-//************************************************************************************************************************************************
+//****************************************************************************************************************************************
 /*
 ^
 ^ Copyright 2021 Blyxyas, github.com/Blyxyas. If you want to use this code, you must leave this (current) line intact and legible.
 ^ I don't think you're gonna use this code, but I'll leave it in here anyway.
+^ Btw this is in work in progress, so don't expect it to work.
 ^
- */
-// ***********************************************************************************************************************************************
+*/
+//****************************************************************************************************************************************
 
-// Recommended: To visualize better this code use the "Collorful Comments" extension in VS Code
+// ^ Auxiliar variables and things:
+// ! IMPORTANT:  Recommended: To visualize better this code use the "Colorful Comments" extension in VS Code (And Horizon theme, but that's a little to much personal preference, just recommended)
+
 // Import readline and fs modules.
 fs = require("fs");
 rl = require("readline").createInterface({
   input: process.stdin,
   output: process.stdout,
 });
+
+// Create all the variables and objects that will be used in the game:
+
+let money;
+let inventory = [1, 1, 2];
 
 // Import the save file, if it exists, else, create a file named "savestate" and start the game.
 savestate = require("./savestate.json");
@@ -51,16 +59,16 @@ function save() {
 // ~   cat - Shows this cool cat ascii art, you know, for fun.
 
 // TODO: more commands, maybe?
-// ? if you have more commands, create a pull request or something.
 // **********************
 
 rl.on("line", (line) => {
-  if (commands.indexOf(line) > -1) {
+  if (data.commands.indexOf(line) > -1) {
+    // * Some global stuff:
     if (line === "save") {
       save();
     }
     if (line === "inv") {
-      console.log(data.inventory);
+      console.log(data.inventory.toString().split(",").join("\n"));
     }
     if (line === "exit" || line === "quit") {
       console.log(
@@ -69,14 +77,18 @@ rl.on("line", (line) => {
       process.exit();
     }
     if (line === "cat") {
-      const str = `
-      _._     _,-'""\`-._
-      (,-.\`._,'(       |\`-/|
-          \`-.-' \ )-\`( , o o)
-                \`-    \`_\`"'-`;
-                console.log(str)
+      console.log("(^ↀᴥↀ^) -oh hi-");
+    }
+    if (line === "stats") {
+      console.log(`Money = ${money}\nInventory: ${inventory} \n`);
+    }
+    if (line === "help") {
+      console.log(data.help);
     }
 
+    // * The actual mechanics:
+
+    // ************** End of: [if statement = command] **************
   } else {
     console.log(
       "Invalid command. All your progress were saved to 'savestate.json', don't worry"
