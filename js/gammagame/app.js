@@ -8,7 +8,7 @@
 */
 //****************************************************************************************************************************************
 
-// ^ Auxiliar variables and things:
+// * Auxiliar variables and things:
 // ! IMPORTANT:  Recommended: To visualize better this code use the "Colorful Comments" extension in VS Code (And Horizon theme, but that's a little to much personal preference, just recommended)
 
 // Import readline and fs modules.
@@ -21,7 +21,11 @@ rl = require("readline").createInterface({
 // Create all the variables and objects that will be used in the game:
 
 let money;
-let inventory = [1, 1, 2];
+let inventory = ["Empty"];
+// ^ display inventory function
+function displayInventory() {
+  console.log("Inventory:" + inventory.toString().replace(",", "\n"));
+}
 
 // Import the save file, if it exists, else, create a file named "savestate" and start the game.
 savestate = require("./savestate.json");
@@ -68,11 +72,11 @@ rl.on("line", (line) => {
       save();
     }
     if (line === "inv") {
-      console.log(data.inventory.toString().split(",").join("\n"));
+      console.log(displayInventory());
     }
     if (line === "exit" || line === "quit") {
       console.log(
-        "Goodbye! (All your progress were saved from 'data.json' to 'savestate.json')"
+        "Goodbye! (All your progress were saved to 'savestate.json')"
       );
       process.exit();
     }
