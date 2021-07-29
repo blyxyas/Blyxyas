@@ -1,3 +1,5 @@
+
+// Recommended: To visualize better this code use the "Collorful Comments" extension in VS Code
 // Import readline and fs modules.
 fs = require("fs");
 rl = require("readline").createInterface({
