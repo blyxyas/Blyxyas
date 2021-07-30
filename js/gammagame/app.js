@@ -23,7 +23,6 @@ rl = require("readline").createInterface({
 savestate = require("./savestate.json");
 // And import another data module to handle the game's auxiliar variables, commands, etc....
 data = require("./data.json");
-
 // Create all the variables and objects that will be used in the game:
 
 let money = 123;
@@ -69,7 +68,6 @@ function save() {
 // **********************
 
 rl.on("line", (line) => {
-  if (data.commands.indexOf(line) > -1) {
     // * Some global stuff:
     if (line === "save") {
       save();
@@ -95,9 +93,10 @@ rl.on("line", (line) => {
 
     if (line === "shop") {
       console.log(data.shopLine);
-      rl.on("question", (answer) => {
-        if (money >= data.prices[answer - 1]) {
-          console.log("Bought");
+      rl.on("line", (line) => {
+        if (money >= data.prices[line - 1]) {
+          money -= data.prices[line - 1];
+          console.log(`Bought\nMoney remaining: ${money}`);
         } else {
           console.log(`Not enough money to buy that item (Money = ${money})`);
         }
@@ -105,11 +104,5 @@ rl.on("line", (line) => {
     }
 
     // ************** End of: [if statement = command] **************
-  } else {
-    console.log(
-      "Invalid command. All your progress were saved to 'savestate.json', don't worry"
-    );
-    save();
-    process.exit();
   }
-});
+);

@@ -9,7 +9,7 @@
     "shop - Opens the shop"
   ],
 
-  "prices": [0],
+  "prices": [13],
   "inventory": ["Empty"],
   "shop": [
     {
