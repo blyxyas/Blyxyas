@@ -4,7 +4,7 @@
 ^ Copyright 2021 Blyxyas, github.com/Blyxyas. If you want to use this code, you must leave this (current) line intact and legible.
 ^ I don't think you're gonna use this code, but I'll leave it in here anyway.
 ! IMPORTANT ¡ ↓
-^ Btw this is in work in progress, so don't expect it to work.
+! Btw this is in work in progress, so don't expect it to work.
 ^
 */
 //****************************************************************************************************************************************
@@ -31,7 +31,6 @@ let inventory = data.inventory;
 function displayInventory() {
   console.log("Inventory:" + inventory.toString().replace(",", "\n"));
 }
-let boughItems = data.boughItems;
 
 // **********************
 // TODO: SAVE FUNCTION ↓↓
@@ -68,41 +67,51 @@ function save() {
 // **********************
 
 rl.on("line", (line) => {
-    // * Some global stuff:
-    if (line === "save") {
-      save();
-    }
-    if (line === "inv") {
-      console.log(displayInventory());
-    }
-    if (line === "exit" || line === "quit") {
-      console.log(
-        "Goodbye! (All your progress were saved to 'savestate.json')"
-      );
-      process.exit();
-    }
-    if (line === "help") {
-      console.log(data.help);
-    }
-
-    // ******************************************
-    // ^ The actual mechanics:
-    // ******************************************
-
-    // *   If the player has enough money, he can buy an item.
-
-    if (line === "shop") {
-      console.log(data.shopLine);
-      rl.on("line", (line) => {
-        if (money >= data.prices[line - 1]) {
-          money -= data.prices[line - 1];
-          console.log(`Bought\nMoney remaining: ${money}`);
-        } else {
-          console.log(`Not enough money to buy that item (Money = ${money})`);
-        }
-      });
-    }
-
-    // ************** End of: [if statement = command] **************
+  // * Some global stuff:
+  if (line === "save") {
+    save();
   }
-);
+  if (line === "inv") {
+    console.log(displayInventory());
+  }
+  if (line === "exit" || line === "quit") {
+    console.log("Goodbye! (All your progress were saved to 'savestate.json')");
+    process.exit();
+  }
+  if (line === "help") {
+    console.log(data.help);
+  }
+
+  // ******************************************
+  // ^ The actual mechanics:
+  // ******************************************
+
+  // *   If the player has enough money, he can buy an item.
+
+  // * Detect shop command
+  if (line === "shop") {
+    // * Display shop
+    for (each in data.shop) {
+      console.log(data.shop[each].name);
+    }
+
+    // * Create another readline interface to get the player's choice.
+    rl.on("line", (line) => {
+      // * Typical shop system
+      if (money >= data.shop[line - 1].price) {
+        money -= data.shop[line - 1].price;
+        // * Push to inventory.
+        if (inventory === "Empty") {
+          inventory.pop();
+        }
+        inventory.push(data.shop[line - 1].name);
+        // * Display the message and the inventory.
+        console.log(
+          `Bought\nMoney remaining: ${money}\nInventory (${inventory.length}): ${inventory}`
+        );
+      } else {
+        console.log(`Not enough money to buy that item (Money = ${money})`);
+      }
+    });
+  }
+});

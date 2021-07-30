@@ -8,8 +8,7 @@
     "exit / quit - quits the game",
     "shop - Opens the shop"
   ],
-
-  "prices": [13],
+  
   "inventory": ["Empty"],
   "shop": [
     {
@@ -24,7 +23,5 @@
       "description": "Sunscreen to protect you from the sun. (Duuh)",
       "protection": ["Sun", 3]
     }
-  ],
-  "boughtItems": [],
-  "shopLine": "1. Sunglasses\n"
+  ]
 }
