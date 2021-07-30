@@ -12,7 +12,7 @@
 // * Auxiliar variables and things:
 // ! IMPORTANT →→→→→→→→→ :  Recommended: To visualize better this code use the "Colorful Comments" extension in VS Code.
 
-// Import readline and fs modules.
+// Import 'colors', readline and fs modules.
 fs = require("fs");
 rl = require("readline").createInterface({
   input: process.stdin,
@@ -26,10 +26,14 @@ data = require("./data.json");
 // Create all the variables and objects that will be used in the game:
 
 let money = 123;
-let inventory = data.inventory;
+let inventory = [];
 // ^ display inventory function
 function displayInventory() {
-  console.log("Inventory:" + inventory.toString().replace(",", "\n"));
+  if (inventory != []) {
+    console.log("Inventory is empty!");
+  } else {
+    console.log("Inventory:" + inventory.toString().replace(",", "\n"));
+  }
 }
 
 // **********************
@@ -100,10 +104,7 @@ rl.on("line", (line) => {
       // * Typical shop system
       if (money >= data.shop[line - 1].price) {
         money -= data.shop[line - 1].price;
-        // * Push to inventory.
-        if (inventory === "Empty") {
-          inventory.pop();
-        }
+        // * Push to inventory the item bought.
         inventory.push(data.shop[line - 1].name);
         // * Display the message and the inventory.
         console.log(

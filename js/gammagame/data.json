@@ -8,8 +8,6 @@
     "exit / quit - quits the game",
     "shop - Opens the shop"
   ],
-  
-  "inventory": ["Empty"],
   "shop": [
     {
       "name": "Sunglasses",
