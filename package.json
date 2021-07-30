@@ -8,14 +8,14 @@
     "nodemon": "^2.0.12"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \" There isn't scripts :¡|\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Blyxyas/Blyxyas.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Javascript", "JS", "JSON", "CLI", "Node", "Readline", "FS"],
+  "author": "Blyxyas",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Blyxyas/Blyxyas/issues"
