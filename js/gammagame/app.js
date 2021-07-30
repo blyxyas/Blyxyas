@@ -3,13 +3,14 @@
 ^
 ^ Copyright 2021 Blyxyas, github.com/Blyxyas. If you want to use this code, you must leave this (current) line intact and legible.
 ^ I don't think you're gonna use this code, but I'll leave it in here anyway.
+! IMPORTANT ¡ ↓
 ^ Btw this is in work in progress, so don't expect it to work.
 ^
 */
 //****************************************************************************************************************************************
 
 // * Auxiliar variables and things:
-// ! IMPORTANT:  Recommended: To visualize better this code use the "Colorful Comments" extension in VS Code (And Horizon theme, but that's a little to much personal preference, just recommended)
+// ! IMPORTANT →→→→→→→→→ :  Recommended: To visualize better this code use the "Colorful Comments" extension in VS Code.
 
 // Import readline and fs modules.
 fs = require("fs");
@@ -18,19 +19,20 @@ rl = require("readline").createInterface({
   output: process.stdout,
 });
 
-// Create all the variables and objects that will be used in the game:
-
-let money;
-let inventory = ["Empty"];
-// ^ display inventory function
-function displayInventory() {
-  console.log("Inventory:" + inventory.toString().replace(",", "\n"));
-}
-
 // Import the save file, if it exists, else, create a file named "savestate" and start the game.
 savestate = require("./savestate.json");
 // And import another data module to handle the game's auxiliar variables, commands, etc....
 data = require("./data.json");
+
+// Create all the variables and objects that will be used in the game:
+
+let money = data.money;
+let inventory = data.inventory;
+// ^ display inventory function
+function displayInventory() {
+  console.log("Inventory:" + inventory.toString().replace(",", "\n"));
+}
+let boughItems = data.boughItems;
 
 // **********************
 // TODO: SAVE FUNCTION ↓↓
@@ -47,20 +49,21 @@ function save() {
     fs.writeFileSync("./savestate.json", JSON.stringify(savestate));
   }
 }
+/* 
+* *******************************************
+ ^ MAIN GAME
+* *******************************************
 
-// *******************************************
-// ^ MAIN GAME
-// *******************************************
-
-// **********************
-// ~ Commands:
-// **********************
-// ~   help - Shows the list of commands.
-// ~   save - Saves the game state.
-// ~   exit / quit - quits the game (and saves the game state.)
-// ~   inv - Shows the inventory.
-// ~   stats - Shows the player's stats.
-// ~   cat - Shows this cool cat ascii art, you know, for fun.
+* **********************
+ ~ Commands:
+* **********************
+ ~   help - Shows the list of commands.
+ ~   save - Saves the game state.
+ ~   exit / quit - quits the game (and saves the game state.)
+ ~   inv - Shows the inventory.
+ ~   stats - Shows the player's stats.
+ ~   shop - Displays the shop.
+ */
 
 // TODO: more commands, maybe?
 // **********************
@@ -80,17 +83,33 @@ rl.on("line", (line) => {
       );
       process.exit();
     }
-    if (line === "cat") {
-      console.log("(^ↀᴥↀ^) -oh hi-");
-    }
-    if (line === "stats") {
-      console.log(`Money = ${money}\nInventory: ${inventory} \n`);
-    }
     if (line === "help") {
       console.log(data.help);
     }
 
-    // * The actual mechanics:
+    // ******************************************
+    // ^ The actual mechanics:
+    // ******************************************
+
+    // *   If the player has enough money, he can buy an item.
+
+    function checkPrice(price) {
+      if (money >= price) {
+        console.log("Bought!");
+      } else {
+        console.log("You don't have enough money to buy this item.");
+      }
+    }
+
+    if (line === "shop") {
+      rl.question(data.shopLine, (answer) => {
+        switch (answer) {
+          case 1:
+            checkPrice(data.prices);
+            break;
+        }
+      });
+    }
 
     // ************** End of: [if statement = command] **************
   } else {

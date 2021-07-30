@@ -1,13 +1,30 @@
 {
-    "commands": [
-       "save",
-       "inv",
-       "help",
-       "exit",
-       "quit",
-       "stats",
-       "cat"
-    ],
-    "help": ["Commands: ",
-    "help"]
+  "commands": ["save", "inv", "help", "exit", "quit", "shop"],
+  "help": [
+    "Commands: ",
+    "help - Shows this list of commands.",
+    "inv - Shows the inventory",
+    "save - Saves the game",
+    "exit / quit - quits the game",
+    "shop - Opens the shop"
+  ],
+
+  "prices": [0],
+  "inventory": ["Empty"],
+  "shop": [
+    {
+      "name": "Sunglasses",
+      "price": 10,
+      "description": "A pair of sunglasses that make you look cool. (⌐■_■)",
+      "protection": ["Sun", 1]
+    },
+    {
+      "name": "Sunscreen",
+      "price": 40,
+      "description": "Sunscreen to protect you from the sun. (Duuh)",
+      "protection": ["Sun", 3]
+    }
+  ],
+  "boughtItems": [],
+  "shopLine": "1. Sunglasses\n"
 }
