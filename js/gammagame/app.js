@@ -26,7 +26,7 @@ data = require("./data.json");
 
 // Create all the variables and objects that will be used in the game:
 
-let money = data.money;
+let money = 123;
 let inventory = data.inventory;
 // ^ display inventory function
 function displayInventory() {
@@ -93,19 +93,15 @@ rl.on("line", (line) => {
 
     // *   If the player has enough money, he can buy an item.
 
-    function checkPrice(price) {
-      if (money >= price) {
-        console.log("Bought!");
-      } else {
-        console.log("You don't have enough money to buy this item.");
-      }
-    }
-
     if (line === "shop") {
-      rl.question(data.shopLine, (answer) => {
+      rl.question("question", (answer) => {
         switch (answer) {
           case 1:
-            checkPrice(data.prices);
+            if (money >= data.prices[answer - 1]) {
+              money -= data.prices;
+              boughItems.push(data.item);
+              console.log("Bought!");
+            }
             break;
         }
       });
