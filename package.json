@@ -1,0 +1,24 @@
+{
+  "name": "All-My-Projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blyxyas/Blyxyas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blyxyas/Blyxyas/issues"
+  },
+  "homepage": "https://github.com/Blyxyas/Blyxyas#readme"
+}

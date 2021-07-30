@@ -94,15 +94,12 @@ rl.on("line", (line) => {
     // *   If the player has enough money, he can buy an item.
 
     if (line === "shop") {
-      rl.question("question", (answer) => {
-        switch (answer) {
-          case 1:
-            if (money >= data.prices[answer - 1]) {
-              money -= data.prices;
-              boughItems.push(data.item);
-              console.log("Bought!");
-            }
-            break;
+      console.log(data.shopLine);
+      rl.on("question", (answer) => {
+        if (money >= data.prices[answer - 1]) {
+          console.log("Bought");
+        } else {
+          console.log(`Not enough money to buy that item (Money = ${money})`);
         }
       });
     }
