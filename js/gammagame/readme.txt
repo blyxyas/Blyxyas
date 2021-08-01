@@ -20,15 +20,5 @@ The savestate.json file have this some perculiarities:
 │              
 └──────────────┘
 
-There are a few required modules, because, well, the games are a little complex things.
-So, just import this module and you will be fine.
-
-    - colors
-
-Yes, colors is the unique module to install, because both fs and readline are native of node.js.
-Maybe I can create a version without the colors module, but it will be ugly, and not very aesthetic (┬┬﹏┬┬).
-
-So just install colors with:
-
-npm install colors
-or all those alternatives, like -g or --save, y
+There aren't required modules that aren't native of Node.js.
+But, the required modules are (All from Node): Readline, FS 
