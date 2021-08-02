@@ -1,5 +1,4 @@
 {
-  "x": {
-    "money": 0
-  }
+  "money": 100,
+  "inventory": [1, 2]
 }
