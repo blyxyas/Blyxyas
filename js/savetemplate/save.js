@@ -1,7 +1,8 @@
 fs = require("fs");
 
 function save() {
-  fs.writeFileSync("./tosave.json", JSON.stringify(content));
+  content.money += 3412;
+  fs.writeFileSync("./tosave.json", content);
 }
 
 function load() {
@@ -9,7 +10,5 @@ function load() {
 }
 
 load();
-content.money += 23;
-console.log(content.money.toString());
-content.inventory += 547;
 save();
+
