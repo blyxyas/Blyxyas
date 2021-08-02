@@ -1,0 +1,11 @@
+{
+  "readme": {
+    "name": "readme",
+    "content": ["This is ae"]
+  },
+
+  "anotherfile": {
+    "name": "anotherfile",
+    "content": ["This is another file"]
+  }
+}
