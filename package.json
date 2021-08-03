@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "colors": "^1.4.0",
+    "console-png": "^1.2.1",
     "dotenv": "^10.0.0",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "terminal-image": "^2.0.0"
   },
   "scripts": {
     "test": "echo \" There isn't scripts :¡|\""
@@ -14,7 +17,15 @@
     "type": "git",
     "url": "git+https://github.com/Blyxyas/Blyxyas.git"
   },
-  "keywords": ["Javascript", "JS", "JSON", "CLI", "Node", "Readline", "FS"],
+  "keywords": [
+    "Javascript",
+    "JS",
+    "JSON",
+    "CLI",
+    "Node",
+    "Readline",
+    "FS"
+  ],
   "author": "Blyxyas",
   "license": "ISC",
   "bugs": {

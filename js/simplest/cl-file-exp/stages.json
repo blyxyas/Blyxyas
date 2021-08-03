@@ -1,11 +1,25 @@
 {
   "readme": {
     "name": "readme",
-    "content": ["This is ae"]
+    "type": "file",
+    "content": ["This is a readme"]
   },
-
   "anotherfile": {
     "name": "anotherfile",
+    "type": "file",
     "content": ["This is another file"]
+  },
+  "all-commands": {
+    "name": "all-commands",
+    "type": "file",
+    "content": [
+      "Commands:",
+      "  - dir                  - Shows the current directory content",
+      "  - open <file-name>          - Opens the file"
+    ]
+  },
+  "venti": {
+    "name": "venti",
+    "type": "image"
   }
 }
