@@ -9,13 +9,14 @@
     "type": "file",
     "content": ["This is another file"]
   },
-  "all-commands": {
-    "name": "all-commands",
+  "help": {
+    "name": "help",
     "type": "file",
     "content": [
-      "Commands:",
-      "  - dir                  - Shows the current directory content",
-      "  - open <file-name>          - Opens the file"
+      "Commands:\n",
+      " dir - Shows the current directory content\n",
+      " open <file-name> - Opens the file\n",
+      " This is very simple!"
     ]
   },
   "venti": {

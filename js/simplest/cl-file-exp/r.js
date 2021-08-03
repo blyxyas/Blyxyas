@@ -11,6 +11,11 @@ require("console-png").attachTo(console);
 
 stages = require("./stages.json");
 
+console.log(
+  "::::::::::::\nCommands\n::::::::::::\n\n".yellow +
+    "dir - Shows the current directory content\nopen <file-name> - Opens the file\n"
+);
+
 rl.on("line", (line) => {
   // * Get the command + input:
   larg = line.split(" ");
@@ -20,12 +25,12 @@ rl.on("line", (line) => {
   // * Display all directorys:
 
   if (cmd === "dir") {
-    console.log("::::::::::::\nDirectory:\n::::::::::::\n".yellow);
+    console.log("::::::::::::\nDirectory:\n::::::::::::\n".brightYellow);
     console.log(
-      "Length".yellow +
-        "\t\t Name".red +
-        "\t\t Type".blue +
-        "\n--------\t --------\t --------".yellow
+      "Length".brightYellow +
+        "\t\t Name".brightRed +
+        "\t\t Type".brightBlue +
+        "\n--------\t --------\t --------".brightYellow
     );
     for (each in stages) {
       if (stages[each].type === "image") {
@@ -46,8 +51,10 @@ rl.on("line", (line) => {
   if (cmd === "open") {
     if (stages[arg].type === "image") {
       console.png(require("fs").readFileSync("./ventir.png"));
+    } else {
+      console.log(
+        "·> ".bold.brightRed + stages[arg].content.toString().brightYellow
+      );
     }
-  } else {
-    console.log(stages[arg].content);
   }
 });
