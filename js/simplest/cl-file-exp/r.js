@@ -8,7 +8,7 @@ var colors = require("colors");
 require("console-png").attachTo(console);
 
 // ^ terminal-image required (npm install terminal-image)
-
+commands = ["dir", "open readme", "open venti", "open anotherfile"];
 stages = require("./stages.json");
 
 console.log(
@@ -35,7 +35,7 @@ rl.on("line", (line) => {
     for (each in stages) {
       if (stages[each].type === "image") {
         console.log(
-          `Not available\t ${stages[each].name.bold}  \t ${stages[each].type}`
+          `Not available\t ${stages[each].name.bold}\t\t ${stages[each].type}`
         );
         return;
       }
@@ -53,7 +53,9 @@ rl.on("line", (line) => {
       console.png(require("fs").readFileSync("./ventir.png"));
     } else {
       console.log(
-        "·> ".bold.brightRed + stages[arg].content.toString().brightYellow
+        arg.italic.gray +
+          " ·> ".bold.brightRed +
+          stages[arg].content.toString().brightYellow
       );
     }
   }
