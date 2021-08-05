@@ -1,7 +1,6 @@
 import json
 path = "keywords.json"
 
-
 """
 * WAIT: You can customize this
 * The way you can customize this is executing the file 'customizer.py' in the terminal
@@ -29,6 +28,10 @@ keywords = data["keywords"]
 replacements = data["replacements"]
 breakwords = data["breakwords"]
 breakrepl = data["breakrepl"]
+globalwords = data["globalwords"]
+grepl = data["grepl"]
+
+listcheck = False
 
 # Search if 'word' is in the list of keywords:
 # If " then replace it with the replacement (same index)
@@ -36,13 +39,40 @@ f.close()
 f = open("markdown.md", "w")
 for word in words:
 
+    if listcheck == True:
+        print("oh hi")
+        words[words.index(word)] = "<li>" + word
+    else:
+        word = word
+
     if word.startswith("\\"):
         continue
 
     if word in keywords:
-        words[words.index(word)] = replacements[keywords.index(word)]
+        # print(f"words.index(word) = {words.index(word)} !! replacements.index = {keywords.index(word)}")
+        words[words.index(word)] = replacements[keywords.index(word) - 1]
+
     if word in breakwords:
         # replace 'word' with the replace in the breakword list
         words[words.index(word)] = breakrepl[breakwords.index(word)]
 
+    if word in globalwords:
+        words[words.index(word)] = grepl[globalwords.index(word)]
+
+        # * Ordered and unordered lists
+
+    if word == "ol" or word == "ul":
+        listcheck = True
+
+    if word == ";ol" or word == ";ul":
+        listcheck = False
+
+
 f.write(" ".join(words))
+
+
+def colored(r, g, b, text):
+    return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
+
+
+print(colored(66, 245, 111, 'Text to Markdown Completed'))

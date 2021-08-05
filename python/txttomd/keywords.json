@@ -1,4 +1,6 @@
 {
+  "globalwords": ["br", "hr"],
+  "grepl": ["<br>", "<hr>"],
   "keywords": [
     "t1",
     "t2",
@@ -25,7 +27,6 @@
     "<b>",
     "<i>",
     "<blockquote>",
-    "<br>",
     "<ul>",
     "<ol>"
   ],
