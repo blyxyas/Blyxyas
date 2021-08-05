@@ -7,7 +7,7 @@ Btw this actually writes in HTML syntax, but you can customize that for your nee
 
 If you writes a keyword (e.g t1) then it will be translated to output.md in markdown format.
 
-# Keywords
+## Keywords
 
 t1: Title
 t2: Title 2
@@ -20,3 +20,5 @@ t6: Title 6
 6b: bold
 8i: italic
 6bb: blockquote
+
+Im currently adding more keywords, so stay tuned, like tomorrow or something.

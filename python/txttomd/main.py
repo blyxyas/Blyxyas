@@ -1,9 +1,16 @@
+import json
+path = "keywords.json"
+
+
 """
 * WAIT: You can customize this
 * The way you can customize this is executing the file 'customizer.py' in the terminal
 * This file will ask you some questions, and will generate a new 'main.py' file with the right syntax,
 * But you can also changes some things in keywords, replacements, breakword and breakrepl,
 * To change your syntax, and you can even add some additional keywords, for things like bold italic, etc...
+
+^ The way to customize is:
+^ Write your shortcut / custom syntax in 'keywords' list (in data.json)
 """
 
 # Read the file and split the words
@@ -14,16 +21,16 @@ words = content.split()
 
 print(f"words = {words}")
 
-keywords = ["t1", "t2", "t3", "t4", "t5", "t6", "cc", "bb", "ii", "bcq"]
 
-replacements = ["<h1>", "<h2>", "<h3>", "<h4>", "<h5>",
-                "<h6>", "<code>", "<b>", "<i>", "<blockquote>"]
+data = json.load(open(path, "r", encoding="utf-8"))
+keywords = data["keywords"]
 
-breakwords = [";t1", ";t2", ";t3", ";t4",
-              ";t5", ";t6", ";cc", ";bb", ";ii", ";bcq"]
+replacements = data["replacements"]
 
-breakrepl = ["</h1>", "</h2>", "</h3>", "</h4>",
-             "</h5>", "</h6>", "</code>", "</b>", "</i>", "</blockquote>"]
+breakwords = data["breakwords"]
+
+breakrepl = data["breakrepl"]
+
 # Search if 'word' is in the list of keywords:
 # If " then replace it with the replacement (same index)
 f.close()

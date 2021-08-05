@@ -1,2 +1,2 @@
 bcq Oh hi! ;bcq how are bb you? ;bb I am ii doing well ;ii , thanks for asking! by the way:
-cc some code fragment ;cc
+cc some code fragment ;cc bb another bold ;bb
