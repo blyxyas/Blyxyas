@@ -10,7 +10,10 @@ path = "keywords.json"
 * To change your syntax, and you can even add some additional keywords, for things like bold italic, etc...
 
 ^ The way to customize is:
-^ Write your shortcut / custom syntax in 'keywords' list (in data.json)
+^ Write your shortcut / custom syntax in 'keywords' list (in keywords.json)
+^ Then write the html syntax for the same shortcut in the 'replacements' list (in keywords.json)
+^ Then write the shortcut / custom syntax for the break in 'breakword' list (in keywords.json)
+^ Then write the html syntax for the break in 'breakrepl' list (in keywords.json)
 """
 
 # Read the file and split the words
