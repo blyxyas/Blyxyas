@@ -3,5 +3,5 @@
 node_modules
 .env
 test.js
-package.JSON
-package-lock.json
+package.json
+.package-lock.json
