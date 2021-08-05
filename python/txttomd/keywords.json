@@ -9,7 +9,10 @@
     "cc",
     "bb",
     "ii",
-    "bcq"
+    "bcq",
+    "brk",
+    "ul",
+    "ol"
   ],
   "replacements": [
     "<h1>",
@@ -21,7 +24,10 @@
     "<code>",
     "<b>",
     "<i>",
-    "<blockquote>"
+    "<blockquote>",
+    "<br>",
+    "<ul>",
+    "<ol>"
   ],
   "breakwords": [
     ";t1",
@@ -33,7 +39,9 @@
     ";cc",
     ";bb",
     ";ii",
-    ";bcq"
+    ";bcq",
+    ";ul",
+    ";ol"
   ],
   "breakrepl": [
     "</h1>",
@@ -45,6 +53,8 @@
     "</code>",
     "</b>",
     "</i>",
-    "</blockquote>"
+    "</blockquote>",
+    "</ul>",
+    "</ol>"
   ]
 }

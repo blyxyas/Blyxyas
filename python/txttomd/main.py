@@ -22,16 +22,12 @@ f = open("txt.txt", "r")
 content = f.read()
 words = content.split()
 
-print(f"words = {words}")
-
-
+# Import the Keywords
 data = json.load(open(path, "r", encoding="utf-8"))
+
 keywords = data["keywords"]
-
 replacements = data["replacements"]
-
 breakwords = data["breakwords"]
-
 breakrepl = data["breakrepl"]
 
 # Search if 'word' is in the list of keywords:
@@ -50,4 +46,3 @@ for word in words:
         words[words.index(word)] = breakrepl[breakwords.index(word)]
 
 f.write(" ".join(words))
-print(words)

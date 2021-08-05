@@ -9,16 +9,19 @@ If you writes a keyword (e.g t1) then it will be translated to output.md in mark
 
 ## Keywords
 
-t1: Title
-t2: Title 2
-t3: Title 3
-t4: Title 4
-t5: Title 5
-t6: Title 6
+`t1`: Title <br>
+`t2`: Title 2<br>
+`t3`: Title 3<br>
+`t4`: Title 4<br>
+`t5`: Title 5<br>
+`t6`: Title 6<br><br>
+`4c`: Code<br>
+`6b`: bold<br>
+`8i`: italic<br>
+`6bb`: blockquote<br><br>
+`brk`: break<br>
+`ul`: unordered list<br>
+`ol`: ordered list
 
-4c: Code
-6b: bold
-8i: italic
-6bb: blockquote
 
 Im currently adding more keywords, so stay tuned, like tomorrow or something.
