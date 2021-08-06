@@ -90,6 +90,7 @@ ii Blyxyas ;ii
 `ul`: Unordered list<br>
 `.`: List item<br>
 `hr`: Horizontal rule<br>
+`\\ + keyword`: Cancels the format of that shortcut (And deletes the `\\`)
 
 
 
