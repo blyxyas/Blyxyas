@@ -28,51 +28,49 @@ keywords = data["keywords"]
 replacements = data["replacements"]
 breakwords = data["breakwords"]
 breakrepl = data["breakrepl"]
-globalwords = data["globalwords"]
-grepl = data["grepl"]
 
-listcheck = False
+listing = False
 
 # Search if 'word' is in the list of keywords:
 # If " then replace it with the replacement (same index)
 f.close()
 f = open("markdown.md", "w")
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def b(string):
+    print(f"{bcolors.BOLD}{string}{bcolors.ENDC}")
+
+# * Main Loop Core
+
 for word in words:
-
-    if listcheck == True:
-        print("oh hi")
-        words[words.index(word)] = "<li>" + word
-    if listcheck == False:
-        word = word
-
+    b("Variable Settled")
     if word.startswith("\\"):
-        continue
-
+        words[words.index(word)] = word[2:]
+    
     if word in keywords:
         # print(f"words.index(word) = {words.index(word)} !! replacements.index = {keywords.index(word)}")
-        words[words.index(word)] = replacements[keywords.index(word)]
-
-    elif word in breakwords:
+        words[words.index(word)] = replacements[keywords.index(word)]  
+    if word in breakwords:
         # replace 'word' with the breakword in the breakrepl list
         words[words.index(word)] = breakrepl[breakwords.index(word)]
-
-    elif word in globalwords:
-        words[words.index(word)] = grepl[globalwords.index(word)]
-
-        # * Ordered and unordered lists
-
-    if word == "ol" or word == "ul":
-        listcheck = True
-    elif word == ";ol": 
-        print("hi")
-
+         
+b("completo")
+# * Ordered and unordered list
+        
 f.write(" ".join(words))
 
 # (*≧︶≦)
 
+print(f'{bcolors.OKGREEN}Text to Markdown Completed{bcolors.ENDC}')
 
-def colored(r, g, b, text):
-    return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
-
-
-print(colored(66, 245, 111, 'Text to Markdown Completed'))
+# ^ {bcolors.ENDC} to END COLOR

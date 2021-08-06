@@ -19,10 +19,12 @@ To break the format, just write a semi colon and the keyword, (e.g `t1` Title `;
 `cc`: Code<br>
 `bb`: bold<br>
 `ii`: italic<br>
+`bbi`: bold italic<br>
 `bcq`: blockquote<br><br>
 `brk`: break<br>
 `ul`: unordered list<br>
-`ol`: ordered list
+`ol`: ordered list<br>
+`li`: list item<br>
 
 
 Im currently adding more keywords, so stay tuned, like tomorrow or something.
