@@ -1,6 +1,5 @@
 function conversion() {
     var el = prompt("String to encode (Max 14 Char.)");
-  
     var a = el.slice(0, 1);
     var b = el.slice(1, 2);
     var c = el.slice(2, 3);
@@ -781,6 +780,8 @@ function conversion() {
   }
   document.write(conversion());
 
+  /*
+  
   if (a == "a"){
     document.write("ffffff")
     }else if (a == "b"){
@@ -834,3 +835,5 @@ function conversion() {
     }else if (a == "z"){
     document.write("FFffFFf")
     }
+
+    */

@@ -1,3 +1,6 @@
+var startTime = performance.now();
+
+
 function conversion() {
   var el = prompt("String to decode (Max 14 Char.)");
 
@@ -854,3 +857,7 @@ document.write("y")
 document.write("z")
 }*/
 
+var endTime = performance.now();
+var totalTime=endTime-startTime;// time took to run in milliseconds
+
+alert('Total time:'+totalTime +'ms');
