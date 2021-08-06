@@ -42,7 +42,7 @@ for word in words:
     if listcheck == True:
         print("oh hi")
         words[words.index(word)] = "<li>" + word
-    else:
+    if listcheck == False:
         word = word
 
     if word.startswith("\\"):
@@ -50,27 +50,26 @@ for word in words:
 
     if word in keywords:
         # print(f"words.index(word) = {words.index(word)} !! replacements.index = {keywords.index(word)}")
-        words[words.index(word)] = replacements[keywords.index(word) - 1]
+        words[words.index(word)] = replacements[keywords.index(word)]
 
-    if word in breakwords:
-        # replace 'word' with the replace in the breakword list
+    elif word in breakwords:
+        # replace 'word' with the breakword in the breakrepl list
         words[words.index(word)] = breakrepl[breakwords.index(word)]
 
-    if word in globalwords:
+    elif word in globalwords:
         words[words.index(word)] = grepl[globalwords.index(word)]
 
         # * Ordered and unordered lists
 
     if word == "ol" or word == "ul":
         listcheck = True
-
-    if word == ";ol" or word == ";ul":
-        listcheck = False
-
+    elif word == ";ol": 
+        print("hi")
 
 f.write(" ".join(words))
 
 # (*≧︶≦)
+
 
 def colored(r, g, b, text):
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
