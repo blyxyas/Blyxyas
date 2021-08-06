@@ -17,14 +17,26 @@ convert.py
 
 Now, open ***markdown.md*** and preview it, you'll see how the keywords were converted into Markdown (More HTML than markdown) syntax.
 
-You can (even) customize the output by editing the ***config.json*** file.
+Unlike other "languages" like HTML, where you need to specify that, hey that's a keyword, here, simply with a space that's specified.
+
+<b>HTML:</b>
+```
+<h1>This is a header</h1>
+```
+
+<b>(My) Text to Markdown:</b>
+```
+t1 This is a header ;t1
+```
+
+You can (even) customize the shortcuts by editing the ***config.json*** file.
 
 But an example of a default configuration doesn't look ugly... <h6>I think.</h6>
 
 ```
 t1 Hi 👋 ;t1
-I'm bb Blyxyas ;bb And I'm just trying the cc beta ;cc version of my bbi NEW ;bbi text to markdown converter, so, it's very simple yet
-very bbi powerful and lightweight, ;bbi so it's very useful for weak devices!.
+I'm bb Blyxyas ;bb And I'm just trying the cc beta ;cc version of my bbi NEW ;bbi text to markdown converter, so, 
+it's very simple yet very bbi powerful and lightweight, ;bbi so it's very useful for weak devices!.
 
 You can even have custom shortcuts and keywords for your text with this simple guidelines:
 
@@ -45,6 +57,13 @@ ol
 ;ol
 
 Thanks for reading and bye!
+br ii
+btw you can even have unordered lists ;ii
+ul
+. bb First Element ;bb
+. Second Element
+;ul
+
 
 hr
 br
@@ -61,15 +80,18 @@ ii Blyxyas ;ii
 `t4`: Title 4<br>
 `t5`: Title 5<br>
 `t6`: Title 6<br><br>
-`cc`: Code<br>
-`bb`: bold<br>
-`ii`: italic<br>
-`bbi`: bold italic<br>
-`bcq`: blockquote<br><br>
-`brk`: break<br>
-`ul`: unordered list<br>
-`ol`: ordered list<br>
-`li`: list item<br>
+`cc`: `Code`<br>
+`bb`: <b>Bold</b><br>
+`ii`: <i>Italic</i><br>
+`bbi`: <b><i>Bold + Italic</b></i><br>
+`bcq`: <blockquote>blockquote</blockquote><br><br>
+`br`: Break<br>
+`ol`: Ordered list<br>
+`ul`: Unordered list<br>
+`.`: List item<br>
+`hr`: Horizontal rule<br>
 
 
-Im currently adding more keywords, so stay tuned, like tomorrow or something.
+
+<b>Im currently adding more keywords, so stay tuned</b><br><i>
+Yes, I know, is kinda ironic that Im not writing this using my own tool...</i>

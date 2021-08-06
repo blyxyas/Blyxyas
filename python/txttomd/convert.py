@@ -1,6 +1,3 @@
-
-import time
-start = time.time()
 import json
 
 class bcolors:
@@ -13,9 +10,6 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-
-
-print(f"{bcolors.HEADER}{bcolors.BOLD}cd X:\\All-My-Projects\\python\\txttomd>{bcolors.ENDC}")
 
 path = "config.json"
 
@@ -78,8 +72,3 @@ f.write(" ".join(words))
 # (*≧︶≦)
 
 print(f'{bcolors.OKGREEN}Text to Markdown Completed{bcolors.ENDC}')
-
-# ^ {bcolors.ENDC} to END COLOR
-# Some performance testing
-end = time.time()
-print(f"Calc time", end - start)
