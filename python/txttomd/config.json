@@ -1,5 +1,7 @@
 {
-  
+  "globalwords": [".", "br", "hr"],
+  "grepl": ["<li>", "<br>", "<hr>"],
+
   "keywords": [
     "t1",
     "t2",
@@ -13,9 +15,7 @@
     "bcq",
     "ol",
     "ul",
-    ".",
-    "br",
-    "hr"
+    "bbi"
   ],
   "replacements": [
     "<h1>",
@@ -30,10 +30,7 @@
     "<blockquote>",
     "<ol>",
     "<ul>",
-    "<li>",
-    "<br>",
-    "<hr>"
-    
+    "<b><i>"
   ],
   "breakwords": [
     ";t1",
@@ -47,7 +44,8 @@
     ";ii",
     ";bcq",
     ";ol",
-    ";ul"
+    ";ul",
+    ";bbi"
   ],
   "breakrepl": [
     "</h1>",
@@ -61,6 +59,7 @@
     "</i>",
     "</blockquote>",
     "</ol>",
-    "</ul>"
+    "</ul>",
+    "</b></i>"
   ]
 }

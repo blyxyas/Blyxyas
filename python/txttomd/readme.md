@@ -3,10 +3,55 @@
 Hi! This program helps you to write faster and better markdown files, and its written in Python, very simple.
 Btw this actually writes in HTML syntax, but you can customize that for your needs.
 
-# Guide:
+# Usage
 
-If you writes a keyword (e.g t1) then it will be translated to output.md in markdown format.
-To break the format, just write a semi colon and the keyword, (e.g `t1` Title `;t` Text)
+Write in the ***txt.txt*** file and save it, then execute the converter:
+
+```python
+python convert.py
+```
+↑ *or* ↓ (In `CMD`)
+```python
+convert.py
+```
+
+Now, open ***markdown.md*** and preview it, you'll see how the keywords were converted into Markdown (More HTML than markdown) syntax.
+
+You can (even) customize the output by editing the ***config.json*** file.
+
+But an example of a default configuration doesn't look ugly... <h6>I think.</h6>
+
+```
+t1 Hi 👋 ;t1
+I'm bb Blyxyas ;bb And I'm just trying the cc beta ;cc version of my bbi NEW ;bbi text to markdown converter, so, it's very simple yet
+very bbi powerful and lightweight, ;bbi so it's very useful for weak devices!.
+
+You can even have custom shortcuts and keywords for your text with this simple guidelines:
+
+ol
+. Write your shortcut / Custom syntax in the cc 'keywords' ;cc list
+. Then write the html syntax for the same shortcut in the cc 'replacements' ;cc
+. Then write the shortcut / custom syntax for the break in cc 'breakword' ;cc
+. Then write the html syntax for the break in cc 'breakrepl' ;cc list
+;ol
+
+br If you want to write a global shortcut (for example a horizontal rule):
+br br
+ol
+. Add the shortcut to the cc 'globalwords' ;cc list
+. Then add the same shortcut, but in HTML syntax in the cc 'grepl' ;cc list.
+
+
+;ol
+
+Thanks for reading and bye!
+
+hr
+br
+
+ii Blyxyas ;ii
+```
+
 
 ## Keywords
 
