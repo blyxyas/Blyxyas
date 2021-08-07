@@ -1,9 +1,15 @@
 """
 Blyxyas' Personal Function Library
 Always growing, because I'm always learning about new things.
+
+Functions:
+    - Replace(keyword, replacement, array, max_iterations)
+    - Shuffle(array)
+
 """
 
 import random
+import numpy as np
 
 def replace(keyword, replacement, array, max_iterations):
     """
