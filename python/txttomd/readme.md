@@ -1,7 +1,7 @@
 # README ⚠️ ↓
 
 Hi! This program helps you to write faster and better markdown files, and its written in Python, very simple.
-Btw this actually writes in HTML syntax, but you can customize that for your needs.
+Btw this actually writes in HTML syntax, but you can customize that for your needs, Everything is configurable.
 
 # Usage
 
