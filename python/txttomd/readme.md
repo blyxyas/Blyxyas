@@ -89,10 +89,7 @@ ii Blyxyas ;ii
 `ol`: Ordered list<br>
 `ul`: Unordered list<br>
 `.`: List item<br>
-`hr`: Horizontal rule<br>
-`\\ + keyword`: Cancels the format of that shortcut (And deletes the `\\`)
-
-
+`hr`: Horizontal rule<br><br>
 
 <b>Im currently adding more keywords, so stay tuned</b><br><i>
 Yes, I know, is kinda ironic that Im not writing this using my own tool...</i>

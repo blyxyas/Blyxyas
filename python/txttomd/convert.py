@@ -51,19 +51,16 @@ f = open("markdown.md", "w")
 # * Main Loop Core
 
 for word in words:
-    if word.startswith("\\"):
-        words[words.index(word)] = word[2:]
-        # * Currently this line is in work, but I'm gonna sleep a while, 'cause y'know, health
-    else:
-        if word in keywords:
-            # print(f"words.index(word) = {words.index(word)} !! replacements.index = {keywords.index(word)}")
-            words[words.index(word)] = replacements[keywords.index(word)]
-        if word in breakwords:
-            # replace 'word' with the breakword in the breakrepl list
-            words[words.index(word)] = breakrepl[breakwords.index(word)]
+    
+    if word in keywords:
+        # print(f"words.index(word) = {words.index(word)} !! replacements.index = {keywords.index(word)}")
+        words[words.index(word)] = replacements[keywords.index(word)]
+    if word in breakwords:
+        # replace 'word' with the breakword in the breakrepl list
+        words[words.index(word)] = breakrepl[breakwords.index(word)]
 
-        if word in globalwords:
-            words[words.index(word)] = grepl[globalwords.index(word)]
+    if word in globalwords:
+        words[words.index(word)] = grepl[globalwords.index(word)]
 
 # * Ordered and unordered list
 
