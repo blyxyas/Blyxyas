@@ -9,7 +9,6 @@ Functions:
 """
 
 import random
-import numpy as np
 
 def replace(keyword, replacement, array, max_iterations):
     """
