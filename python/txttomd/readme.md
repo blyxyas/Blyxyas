@@ -91,5 +91,5 @@ ii Blyxyas ;ii
 `.`: List item<br>
 `hr`: Horizontal rule<br><br>
 
-<b>Im currently adding more keywords, so stay tuned</b><br><i>
+If you want more syntax, you can create a pull request, or contact me in Discord, or create it by yourself
 Yes, I know, is kinda ironic that Im not writing this using my own tool...</i>
