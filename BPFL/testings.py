@@ -1,3 +1,3 @@
-import bpfl
-names = ["Alex", "Dave", "Monica", "John"]
-print(bpfl.replace("Dave", "Charlie", names))
+import bfl
+names = ["first element", "second element", "third element", "fourth element"]
+print(bfl.shuffle(names))
