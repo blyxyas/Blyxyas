@@ -92,4 +92,5 @@ ii Blyxyas ;ii
 `hr`: Horizontal rule<br><br>
 
 If you want more syntax, you can create a pull request, or contact me in Discord, or create it by yourself
+<br>
 Yes, I know, is kinda ironic that Im not writing this using my own tool...</i>
