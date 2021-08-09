@@ -3,7 +3,9 @@
 import time
 start_time = time.time()
 
-for x in range(101): # * ← This can be whatever you want
+desired = 100 # * desired number of iterations, you can change it
+
+for x in range(desired + 1):
     output = ""
     if x % 3 == 0:
         output += "Fizz"
