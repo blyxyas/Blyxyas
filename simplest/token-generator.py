@@ -5,6 +5,10 @@ print(f"Mode:  \t\t\t\tID\n-------\t\t\t\t-------\nMain (89 Characters)\t1\nAll 
 
 
 """
+! WARNING: ⚠️⚠️⚠️
+! For some reason, this works in the integrated terminal, but not in the cmd.exe, and I don't know why.
+! If you have the solution, please let me know.
+
 If you want to customize your token, you can just add or remove an item in the list of characters below.
 """
 # Character that will be used to generate the token
