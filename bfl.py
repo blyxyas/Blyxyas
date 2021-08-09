@@ -9,6 +9,7 @@ Functions:
 """
 
 import random
+import time
 
 """
 Some color to print in console. Usage:
