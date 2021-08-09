@@ -10,6 +10,14 @@ Functions:
 
 import random
 
+"""
+Some color to print in console. Usage:
+
+import bfl as b
+
+print(b.color.BOLD + "text" + b.color.END) for example.
+"""
+
 class color:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
