@@ -1,1 +1,0 @@
-<h1> Titulo </h1> <hr> <br> Texto <br> <ol> <li> E <li> I <li> O </ol> <br> <ul> <li> A <li> U <li> B <br> <b><i> Bold + Italic </b></i> <b> Bold </b> <blockquote> Blockquote </blockquote> <br> <code> code </code> <hr> <i> Blyxyas </i>

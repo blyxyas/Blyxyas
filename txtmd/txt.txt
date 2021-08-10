@@ -1,9 +1,0 @@
-t1 README ⚠️ ;t1
-This is a terrain generator, so... ii you can generate terrain ;ii , displayed in ascii.
-
-t2 Usage ;t2
-
-Execute the script with the following parameters:
-```
-    python3 terrain-gen.py <width> <height> <variety>
-```
