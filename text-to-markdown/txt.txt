@@ -1,0 +1,16 @@
+t1 Blyx-Lang ;t1
+
+Blyx-Lang es un "lenguaje de programación" creado por mí, específicamente para que sea rápido, fácil de aprender y legible.
+br
+Blyx-Lang internamente solo es un intermediario, pues el código luego se traduce a Python.
+
+t2 Funciones ;t2
+Las funciones son fáciles de definir, solamente con cc --NombreDeLaFuncion ;cc ya todo lo incluído desde esa ii keyword ;ii hasta un cc ; ;cc en una nueva línea.
+br
+bb Ejemplo ;bb
+
+ucc
+$ In this case Param1
+
+--Waving+Param1+Param2
+ucc

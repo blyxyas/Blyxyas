@@ -90,6 +90,10 @@ ii Blyxyas ;ii
 `ul`: Unordered list<br>
 `.`: List item<br>
 `hr`: Horizontal rule<br><br>
+`ucc`: <br>
+´´´
+Several lines of code
+´´´
 
 If you want more syntax, you can create a pull request, or contact me in Discord, or create it by yourself
 <br>
