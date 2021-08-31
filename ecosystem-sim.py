@@ -9,27 +9,30 @@ import os
 
 def population(animal, alias, animal_death):
         r = random.randint(0, 10)
+        rn = random.randint(0, animal)
         if r <= alias:
             animal += 1
-        if animal_death > animal / 10:
-            animal -= 2
+        if animal_death > animal - rn:
+            animal -= 1000
         return animal
 
-rabbit = 10
-fox = 10
+rabbit = 100
+fox = 100
 generation = 0
 old_fox = 0
 old_rabbit = 0
 max_generation = 5000 # * Max number of generation (You can change this value)
 message = ""
-fox_alias = fox / 30
-rabbit_alias = rabbit / 20
 fox_death = 0
 rabbit_death = 0
-rabbit_death = rabbit - population(rabbit, rabbit_alias, rabbit_death)
-fox_death = fox - population(fox, fox_alias, fox_death)
 
 while True:
+    
+    fox_alias = fox / 30
+    rabbit_alias = rabbit / 20
+    
+    rabbit_death = rabbit - round(rabbit / 10)
+    fox_death = fox - round(fox / 10)
     
     if generation > max_generation:
         break
