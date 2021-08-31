@@ -6,3 +6,4 @@ test.js
 __pycache__/
 test.py
 *.drawio
+env/
