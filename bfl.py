@@ -60,3 +60,4 @@ def shuffle(array):
     # * Shuffle an array
     random.shuffle(array)
     return array
+
