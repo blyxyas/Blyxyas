@@ -31,7 +31,7 @@ for i in eq:
     movie = str(i.text.strip())
     movies.append(movie)
     
-r = random.randint(0, len(movies))
+r = random.randint(0, len(movies) + 1)
 
 class color:
     HEADER = '\033[94m'
@@ -45,6 +45,6 @@ class color:
     UNDERLINE = '\033[4m'
 
 print(f"{color.HEADER} Movie Chosen:")
-print(f"{color.OKGREEN}{color.BOLD}{movies[r]}{color.ENDC}")
+print(f"{color.OKGREEN}{color.BOLD}{movies[round(r / 2)]}{color.ENDC}")
 print(f"{color.WARNING}Or... A random link!")
 print(f"{color.OKGREEN}{links[r]}{color.ENDC}")
