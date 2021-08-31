@@ -4,55 +4,77 @@ Execute main.py to simulate a simple ecosystem.
 """
 
 import time
-from random import randint
+import random
 import os
 
+def population(animal, alias, animal_death):
+        r = random.randint(0, 10)
+        if r <= alias:
+            animal += 1
+        if animal_death > animal / 10:
+            animal -= 2
+        return animal
 
-rabbit = 0
-fox = 0
+rabbit = 10
+fox = 10
 generation = 0
-max_generation = 1000 # * Max number of generation (You can change this value)
+old_fox = 0
+old_rabbit = 0
+max_generation = 5000 # * Max number of generation (You can change this value)
+message = ""
+fox_alias = fox / 30
+rabbit_alias = rabbit / 20
+fox_death = 0
+rabbit_death = 0
+rabbit_death = rabbit - population(rabbit, rabbit_alias, rabbit_death)
+fox_death = fox - population(fox, fox_alias, fox_death)
 
 while True:
+    
+    if generation > max_generation:
+        break
+    else:
+        generation += 1
+        
     # * If you don't wanna clear the console with each output, you can remove this line below me.
     os.system('cls' if os.name == 'nt' else 'clear') # * <== This line clears the console.
-    
     # ^ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     # * Everything else
     # ^ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     
     # * Display the info of the current (older) generation
     
-    print(f"Rabbits: {rabbit}")
-    print(f"Fox(s): {fox}")
-    print(f"Generation: {generation} | {max_generation}")
+    print(f"Rabbits: {rabbit}\nFox(s): {fox}\nGeneration: {generation} | {max_generation}\n...\nFox(s) 100 Generations ago: {old_fox}\nRabbits 100 Generations ago: {old_rabbit}\n\n{message}")
     
-    if generation % 2 == 0:
+    if generation % 100 == 0:
         old_fox = fox
         old_rabbit = rabbit
-    if generation % 3 == 0:
-       older_fox = fox
-       older_rabbit = rabbit
        
        # * Simulate the new generation
     
-    def population(animal, alias):
-        r = randint(0, 10)
-        if r < alias:
-            animal += 1
-        return animal
-    
-    def foxeats():
-        if old_fox < fox:
-            
+    def foxeats(animal_eater, old_animal_eater, animal_ate, animal_eater_alias):
+        if old_animal_eater < animal_eater:
+            r = round(random.random(), 10) * 10
+            animal_eater += r
+            return animal_eater
+        if animal_eater < random.randint(0, animal_ate):
+            animal_ate += 1
+            return animal_ate
+        elif animal_ate < random.randint(0, animal_eater):
+            animal_eater_alias + 1.5
+        else:
+            animal_ate -= 9
+            return animal_ate
         
-    
-    fox = population(fox, 2)
-    rabbit = population(rabbit, 4)
+    fox = population(fox, fox_alias, fox_death)
+    rabbit = population(rabbit, rabbit_alias, rabbit_death)
     
     if fox > old_fox:
-        foxeats(old_fox, fox, rabbit, old_rabbit)
-    
+        foxeats(fox, old_fox, rabbit, fox_alias)
        
-    generation += 1
-    time.sleep(0.4)
+    
+    
+    if rabbit == 0:
+        message = "Rabbits are extinted :("
+    if fox == 0:
+        message = "Fox(s) are extinted :("
