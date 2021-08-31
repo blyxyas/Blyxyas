@@ -33,18 +33,4 @@ for i in eq:
     
 r = random.randint(0, len(movies) + 1)
 
-class color:
-    HEADER = '\033[94m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-print(f"{color.HEADER} Movie Chosen:")
-print(f"{color.OKGREEN}{color.BOLD}{movies[round(r / 2)]}{color.ENDC}")
-print(f"{color.WARNING}Or... A random link!")
-print(f"{color.OKGREEN}{links[r]}{color.ENDC}")
+print(f"###### MOVIE CHOSEN ###### \n {movies[round(r / 2)]} \n ###### LINK ###### \n {links[r]}")
