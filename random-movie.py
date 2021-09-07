@@ -32,5 +32,4 @@ for i in eq:
     movies.append(movie)
     
 r = random.randint(0, len(movies) + 1)
-
 print(f"###### MOVIE CHOSEN ###### \n {movies[round(r / 2)]} \n ###### LINK ###### \n {links[r]}")
