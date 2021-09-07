@@ -1,7 +1,6 @@
 # * NOTE: This isn't a translator using words, or expressions, just translates every character in the string.
 stdin = input("Enter a Message:")
 for arg in stdin:
-    print(arg)
     switcher = {
         "A": "Alpha",
         "B": "Bravo",
@@ -30,4 +29,4 @@ for arg in stdin:
         "Y": "Yankee",
         "Z": "Zulu"
     }
-    print(switcher.get(arg.upper(), ""))
+    print(switcher.get(arg.upper(), arg.upper()))
