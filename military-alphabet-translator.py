@@ -1,5 +1,8 @@
-# * NOTE: This isn't a translator using words, or expressions, just translates every character in the string.
+# * NOTe: This isn't a translator using words, or expressions, just translates every character in the string.
+import os
+
 stdin = input("Enter a Message:")
+stdin = " ".join(stdin.split())
 for arg in stdin:
     switcher = {
         "A": "Alpha",
@@ -30,3 +33,4 @@ for arg in stdin:
         "Z": "Zulu"
     }
     print(switcher.get(arg.upper(), arg.upper()))
+os.system("pause")
