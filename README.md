@@ -1,5 +1,5 @@
-## Hola! 👋
-Soy *Blyxyas*, un programador, por eso estoy en GitHub 😳, actualmente uso Python y JS, y pretendo aprender jQuery... <br>
-**Discord: Blyxyas#2444**
-
-**BTW! [This README.md is both in my personal repo, AND in my repo for little things, with just one or two files, yk](https://github.com/Blyxyas/Blyxyas/)**
+<h2 align="center"><b>Blyxyas</b></h2>
+<h4 align="center"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Developer</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://youtu.be/0rd7erzIT8s">Friend</a></h4>
+<details align="center"><summary><b>Achievements</b></summary>
+<h6>cool readme (?)</h6>
+</details>
