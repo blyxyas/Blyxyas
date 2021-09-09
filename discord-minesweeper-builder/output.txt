@@ -1,4 +1,4 @@
-||:one:||||:two:||||:bomb:||||:one:||||:
-:||||:one:||||:bomb:||||:four:||||:three:||||:
-:||||:two:||||:two:||||:bomb:||||:bomb:||||:
-:||||:bomb:||||:two:||||:two:||||:two:||
+||:one:||||:two:||||:bomb:||||:one:||
+||:one:||||:bomb:||||:four:||||:three:||
+||:two:||||:two:||||:bomb:||||:bomb:||
+||:bomb:||||:two:||||:two:||||:two:||

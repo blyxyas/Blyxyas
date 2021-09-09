@@ -23,6 +23,9 @@ switch = {
 appending = []
 for arg in stdin:
     current = switch.get(str(arg), "ERROR, Invalid Character")
-    appending.append(f"||:{current}:||")
+    if current == "\n":
+        appending.append("\n")
+    else:
+        appending.append(f"||:{current}:||")
 
 writing("".join(appending))
