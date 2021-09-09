@@ -16,7 +16,8 @@ switch = {
     "7": "seven",
     "8": "eight",
     "9": "nine",
-    "b": "bomb"
+    "b": "bomb",
+    "\n": "\n"
 }
 
 appending = []
