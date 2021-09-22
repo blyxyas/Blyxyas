@@ -113,6 +113,4 @@ while True:
         age += 1
     elif r == 3:
         love += 5
-    
-    print("\n\n[P]Pat\n[O]Offer Food\n")
     sleep(2)
