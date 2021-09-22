@@ -1,9 +1,7 @@
-"""
- ******************************
- * Important! simple-term-menu required! (pip install simple-term-menu)
- ****************************** """
+age = 0
+love = 0
+hunger = 20
 
-import menu
 from time import sleep
 from random import randint
 import os
@@ -19,13 +17,6 @@ else:
 
 print("Your new cat(tm) was born!")
 name = input("Name of your new cat?\n\n")
-age = 0
-hunger = 20
-
-stats = {
-    "fat": 0,
-    "old": 0
-}
 
 # * Some messages >
 messages = {
@@ -58,7 +49,7 @@ messages = {
         "I never saw a worst hooman than you! (I never saw other hooman...)",
         "Hooman did you hear about that thing? Va-vaccine I think...",
         "I'm so hungry...",
-        "I'm just a humble cat!"
+        "I'm just a simple cat!"
     ]
 }
 
@@ -72,10 +63,37 @@ else:
     print("You broke some ties with your family")
 # Everything else
 sleep(4)
+
+def pat():
+    global love
+    r = randint(0, 6)
+    print(f"*pat pat pat*\nLove + {r}")
+    love += 5
+
+def offer_food():
+    global hunger
+    r = randint(0, 4)
+    if r > 3:
+        print("{name} Deny your offer.")
+    else:
+        print("{name} Accept your offer")
+    hunger -= 5
+
 while True:
+    with open("input.txt", "r") as f:
+        inp = f.read().lower()
+        f.close()
+    if inp == "p":
+        pat()
+    elif inp == "o":
+        offer_food()
+    with open("input.txt", "w") as f:
+        f.write("")
+    
     print(f"::::::::::::\t\t\t{name}\t\t\t::::::::::::")
     print(f"\t\t\t\tHunger: {hunger}")
     print(f"\t\t\t\t{age} Years Old")
+    print(f"\t\t\t\tLove: {love}")
     r = randint(0, 10)
     if r <= 2:
         if r == 0:
@@ -93,4 +111,8 @@ while True:
     r = randint(0, 7)
     if r  < 1:
         age += 1
+    elif r == 3:
+        love += 5
+    
+    print("\n\n[P]Pat\n[O]Offer Food\n")
     sleep(2)
