@@ -80,15 +80,6 @@ def offer_food():
     hunger -= 5
 
 while True:
-    with open("input.txt", "r") as f:
-        inp = f.read().lower()
-        f.close()
-    if inp == "p":
-        pat()
-    elif inp == "o":
-        offer_food()
-    with open("input.txt", "w") as f:
-        f.write("")
     
     print(f"::::::::::::\t\t\t{name}\t\t\t::::::::::::")
     print(f"\t\t\t\tHunger: {hunger}")
