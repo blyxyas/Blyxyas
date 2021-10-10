@@ -76,7 +76,7 @@ def offer_food():
     if r > 3:
         print("{name} Deny your offer.")
     else:
-        print("{name} Accept your offer")
+        print("{name} Accept your offer.")
     hunger -= 5
 
 while True:
