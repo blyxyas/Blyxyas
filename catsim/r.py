@@ -27,7 +27,7 @@ messages = {
         f"You're so kind giving a better life to {name}"
     ],
     "hungry": [
-        "I'm hungry hooman",
+        "I'm hungry hoosman",
         "I'm hungry",
         "My hunger is above the limit stupid hooman",
         "I'm starving, you bastard",
