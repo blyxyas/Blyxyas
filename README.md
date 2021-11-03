@@ -5,4 +5,4 @@
 </details>
 
 <h1 align="center"><b>Current project:</b></h1>
-<h3 align="center"><b><a href="https://github.com/Blyxyas/eshtml">esHTML</b></h3>
+<h3 align="center"><b><a href="https://github.com/Blyxyas/cxxkeepy">Keepy</b></h3>
