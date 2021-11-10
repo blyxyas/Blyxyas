@@ -8,7 +8,7 @@
 </details>
 
 <h1><b>Current project:</b></h1>
-<h3>Secret project...</h3>
+<h3><a href="https://github.com/Blyxyas/cMina">Mina</a></h3>
 <br>
   
   [![TopLangs](https://github-readme-stats.vercel.app/api/top-langs/?username=blyxyas&layout="compact")](https://github.com/anuraghazra/github-readme-stats)
