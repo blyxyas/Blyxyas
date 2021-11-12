@@ -13,3 +13,6 @@
   
   [![TopLangs](https://github-readme-stats.vercel.app/api/top-langs/?username=blyxyas&layout="compact"&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
   </div>
+
+<h3>Fun facts about me:</h3>
+I named 60% of my big projects the same name as my cats. (Currently Keepy and Mina.)
