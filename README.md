@@ -7,8 +7,12 @@
 <h6>...</h6>
 </details>
 
-<h1><b>Current project:</b></h1>
-<h3><a href="https://github.com/Blyxyas/cMina">Mina</a></h3>
+<h1>Current project:</h1>
+  <h3><a href="https://github.com/Blyxyas/cMina">Mina</a></h3>
+
+<h1>Languages I use:</h1>
+  <h3>C<br>Python<br></h3>
+  <h6>C++ & JS</h6>
 <br>
   
   [![TopLangs](https://github-readme-stats.vercel.app/api/top-langs/?username=blyxyas&layout="compact"&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
