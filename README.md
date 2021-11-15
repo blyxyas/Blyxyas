@@ -7,11 +7,11 @@
 <h6>...</h6>
 </details>
 
-<h1>Current project:</h1>
+<h1 aling=center>Current project:</h1>
   <h3><a href="https://github.com/Blyxyas/cMina">Mina</a></h3>
   <h6>It may be private</h6>
   
-<h1>Languages I use:</h1>
+<h1 align=cneter>Languages I use:</h1>
   <h3>C<br>Python</h3>
   <h6>(C++ & JS)</h6>
 <br>
