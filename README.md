@@ -4,7 +4,6 @@
 <h2><a href="https://youtu.be/dQw4w9WgXcQ">Developer</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://youtu.be/0rd7erzIT8s">Friend</a></h2>
 <details><summary><b>Achievements</b></summary>
 <h5><a href="https://github.com/Blyxyas/keepy">HTML based pseudolanguage + compiler (C++)</a></h5>
-<h5><a href="https://github.com/Blyxyas/dna-machine-learning">I created another category of machine learning (without knowing much about ml)</h5>
 <h6>...</h6>
 </details>
 
@@ -20,4 +19,4 @@
   </div>
 
 <h3>Fun facts about me:</h3>
-I named 60% of my big projects the same name as my cats. (Currently Keepy and Mina.)
+  I named 60% of my big projects the same name as my cats. (Currently Keepy and Mina.)
