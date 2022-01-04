@@ -15,5 +15,8 @@
   <h6>(C++ & JS)</h6>
 <br>
   
-  [![TopLangs](https://github-readme-stats.vercel.app/api/top-langs/?username=blyxyas&layout="compact"&theme=radical)](https://github.com/anuraghazra/github-readme-stats)
+  ![TopLangs](https://github-readme-stats.vercel.app/api/top-langs/?username=blyxyas&layout=compact&border_radius=15&theme=radical)
+<br>
+  ![Blyxyas's GitHub stats](https://github-readme-stats.vercel.app/api?username=blyxyas&theme=radical&border_radius=15&show_icons=true)
+  
   </div>
