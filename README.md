@@ -10,9 +10,9 @@
 <h1 aling=center>Current project:</h1>
   <h6><a href="https://github.com/blyxyas/kakyoin">Kakyoin, a machine learning chatbot</a></h6>
   
-<h1>Languages I use:</h1>
-  <h3>C<br>Python</h3>
-  <h6>(C++ & JS)</h6>
+<h1>Languages I used:</h1>
+  <h3>Currently: Rust<br></h3>
+  <h6>Others: C, C++, JS, Python</h6>
 <br>
   
   ![TopLangs](https://github-readme-stats.vercel.app/api/top-langs/?username=blyxyas&layout=compact&border_radius=15&theme=radical)
