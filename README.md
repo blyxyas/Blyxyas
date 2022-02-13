@@ -17,7 +17,8 @@
 <br>
 
 <h1>My organizations:</h1>
-  I'm the creator of the speak project, a natural language processor written entirely in Rust
+  
+  I'm the creator of the [speak project](https://github.com/speakml/speak), a natural language processor written entirely in Rust
 
   <h2 align=center>⚡ Github Stats</h2>
 
