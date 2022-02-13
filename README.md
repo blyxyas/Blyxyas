@@ -16,6 +16,9 @@
   <h6>Others: C, C++, JS, Python</h6>
 <br>
 
+<h1>My organizations:</h1>
+  I'm the creator of the speak project, a natural language processor written entirely in Rust
+
   <h2 align=center>⚡ Github Stats</h2>
 
 <p align="center"><img height="180em" src="https://github-readme-stats.vercel.app/api?username=Blyxyas&hide_border=true&count_private=true&show_icons=true&theme=radical" alt="Blyxyas" align = "center"/>
