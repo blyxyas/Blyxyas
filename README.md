@@ -9,7 +9,6 @@
 
 <h1 aling=center>Current project:</h1>
   <h6><a href="https://github.com/SpeakML/speak">Speak, a machine learning chatbot</a></h6>
-  <h6><a href="https://github.com/Blyxyas/simpleworkspaces">SimpleWorkspaces, a lightweigth CLI workspaces manager</a></h6>
   
 <h1>Languages I used:</h1>
   <h3>Currently: Rust<br></h3>
