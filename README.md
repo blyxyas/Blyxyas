@@ -4,6 +4,7 @@
 <h2><a href="https://youtu.be/dQw4w9WgXcQ">Developer</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://youtu.be/0rd7erzIT8s">Friend</a></h2>
 <details><summary><b>Achievements</b></summary>
 <h5><a href="https://github.com/Blyxyas/keepy">Keepy, An HTML preprocessor(C++)</a></h5>
+<h5><a href="https://github.com/SpeakML/speak">Speak, a machine-learning chatbot (Rust)</a></h5>
 <h6>...</h6>
 </details>
 
