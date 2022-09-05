@@ -3,17 +3,17 @@
 <h1><b>Blyxyas</b></h1>
 <h2><a href="https://youtu.be/dQw4w9WgXcQ">Developer</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://youtu.be/0rd7erzIT8s">Friend</a></h2>
 <details><summary><b>Achievements</b></summary>
-<h5><a href="https://github.com/Blyxyas/keepy">Keepy, An HTML preprocessor(C++)</a></h5>
 <h5><a href="https://github.com/SpeakML/speak">Speak, a machine-learning chatbot (Rust)</a></h5>
-<h6>...</h6>
+<h6><a href="https://github.com/blyxyas/hq9c">HQ9+ Compiler</a></h6>
 </details>
 
-<h1 aling=center>Current project:</h1>
-  <h6><a href="https://github.com/SpeakML/speak">Speak, a machine learning chatbot</a></h6>
+<h1 aling=center>Current project(s):</h1>
+  <h3>BrainCum Compiler</h3>
+  <h6>(A job)</h6>
   
-<h1>Languages I used:</h1>
+<h1>Languages I use:</h1>
   <h3>Currently: Rust<br></h3>
-  <h6>Others: C, C++, JS, Python</h6>
+  <h6>Others: C, C++, JS / TS, Python, Go</h6>
 <br>
 
 <h1>My organizations:</h1>
