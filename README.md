@@ -1,6 +1,7 @@
 <div align="center">
 
-<h1><b>Blyxyas</b></h1>
+<h1><b>Alex González</b></h1>
+<h6>a.k.a Alejandra<h6>
 <h2><a href="https://youtu.be/dQw4w9WgXcQ">Developer</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://youtu.be/0rd7erzIT8s">Friend</a></h2>
 <details><summary><b>Achievements</b></summary>
 <h5><a href="https://github.com/SpeakML/speak">Speak, a machine-learning chatbot (Rust)</a></h5>
