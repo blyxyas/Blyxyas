@@ -8,7 +8,6 @@
 </details>
 
 <h1 aling=center>Current project(s):</h1>
-  <h3>BrainCum Compiler</h3>
   <h6>(A job)</h6>
   
 <h1>Languages I use:</h1>
