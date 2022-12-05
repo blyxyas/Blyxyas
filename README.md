@@ -1,7 +1,6 @@
 <div align="center">
 
-<h1><b>Alex González</b></h1>
-<h6>a.k.a Alejandra<h6>
+<h1><b>Alejandra González</b></h1>
 <h2><a href="https://youtu.be/dQw4w9WgXcQ">Developer</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="https://youtu.be/0rd7erzIT8s">Friend</a></h2>
 <details><summary><b>Achievements</b></summary>
 <h5><a href="https://github.com/SpeakML/speak">Speak, a machine-learning chatbot (Rust)</a></h5>
@@ -9,7 +8,7 @@
 </details>
 
 <h1 aling=center>Current project(s):</h1>
-  <h6>(A job)</h6>
+  <h3><a href="github.com/salamander-lang/salamander">Salamander, a new kind of framework</a></h3>
   
 <h1>Languages I use:</h1>
   <h3>Currently: Rust<br></h3>
