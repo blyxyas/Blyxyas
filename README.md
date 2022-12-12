@@ -8,7 +8,7 @@
 </details>
 
 <h1 aling=center>Current project(s):</h1>
-  <h3><a href="github.com/salamander-lang/salamander">Salamander, a new kind of framework</a></h3>
+  <h3><a href="https://github.com/salamander-lang/salamander">Salamander, a new kind of framework</a></h3>
   
 <h1>Languages I use:</h1>
   <h3>Currently: Rust<br></h3>
