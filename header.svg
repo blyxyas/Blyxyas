@@ -25,7 +25,7 @@
 					animation: gradientBackground 10s ease infinite;
 					border-radius: 10px;
 					color: white;
-                    filter: url(#filter);
+                    filter: url(#filter) !important;
 				}
 
 				h1 {
