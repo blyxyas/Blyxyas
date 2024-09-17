@@ -1,15 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 800 120" width="800" height="120" xml:space="preserve">
-<filter id="filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB"><feTurbulence type="turbulence" baseFrequency="0.015 0.015" numOctaves="3" seed="8" stitchTiles="stitch" result="turbulence"></feTurbulence><feMorphology operator="dilate" radius="35 35" in="turbulence" result="morphology"></feMorphology><feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 10 0" in="morphology" result="colormatrix"></feColorMatrix><feColorMatrix type="saturate" values="10" in="colormatrix" result="colormatrix1"></feColorMatrix><feComposite in="colormatrix1" in2="SourceAlpha" operator="in" result="composite"></feComposite></filter>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 800 400" width="800" height="400">
 	<foreignObject width="100%" height="100%">
-		  <script type="text/javascript">
-		        window.addEventListener('load',function(){
-		        alert('Hi')
-		        })
-	    		</script>   
-
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<style>
-				.Box {
+<style>
+<!-- Code by github.com/magstatic -->
+				@keyframes rotate {
+					0% {
+						transform: rotate(3deg);
+					}
+					100% {
+						transform: rotate(-3deg);
+					}
+				}
+				@keyframes gradientBackground {
+					0% {
+						background-position: 0% 50%;
+					}
+					50% {
+						background-position: 100% 50%;
+					}
+					100% {
+						background-position: 0% 50%;
+					}
+				}
+				@keyframes fadeIn {
+					0% {
+						opacity: 0;
+					}
+					66% {
+						opacity: 0;
+					}
+					100% {
+						opacity: 1;
+					}
+				}
+				.container {
 					font-family:
 						system-ui,
 						-apple-system,
@@ -22,20 +46,20 @@
 						'Segoe UI Emoji';
 					display: flex;
 					flex-direction: column;
+					align-items: center;
+					justify-content: center;
 					margin: 0;
-				        text-align: center;
 					width: 100%;
-					height: 120px;
-					background: linear-gradient(-45deg, #fc5c7d, #6a82fb, #05dfd7);
+					height: 400px;
+					background: linear-gradient(-45deg, #1AD550, #3ADBC0, #0CC4EF, #9B00FF, #FF509B, #FF3145, #FF8B00, #FFDA00);
 					background-size: 600% 400%;
 					animation: gradientBackground 10s ease infinite;
 					border-radius: 10px;
 					color: white;
-                    filter: url(#filter) !important;
+					text-align: center;
 				}
-
 				h1 {
-					font-size: 40px;
+					font-size: 50px;
 					line-height: 1.3;
 					letter-spacing: 5px;
 					text-transform: uppercase;
@@ -45,21 +69,15 @@
 						0 3px 0 #efefef,
 						0 4px 0 #efefef,
 						0 12px 5px rgba(0, 0, 0, 0.1);
-					animation: rotate ease-in-out 1s infinite alternate;
+					animation: rotate ease-in-out 5s infinite alternate;
 				}
-
 				p {
-					font-size: 15px;
 					text-shadow: 0 1px 0 #efefef;
-					animation: 1s ease 0s normal forwards 1 fadeIn;
-					  padding-top: 10px;
-					  padding-right: 10px;
-					  padding-bottom: 10px;
-					  padding-left: 10px;
+					animation: 2s ease 0s normal forwards 1 fadeIn;
 				}
 			</style>
-			<div class="markdown-body">
-				<h1 id="meow">Meow</h1>
+			<div class="container">
+				<h1>@blyxyas</h1>
 			</div>
 		</div>
 	</foreignObject>
