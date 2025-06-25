@@ -16,4 +16,4 @@ Hi! I'm Alejandra González (*she / her*) a Rust programmer and tech enthusiast,
 
 [You can check my "About me" page for cooler effects! (Please I wasted a lot of time just building that cool thing)](https://goose.love)
 
-[If you're interested in what I do, checkout my CV! :heart:](https://github.com/blyxyas/Blyxyas/blob/main/Alejandra-Gonzalez-17-9-24.pdf)
+[If you're interested in what I do, checkout my CV! :heart:](https://github.com/blyxyas/Blyxyas/blob/main/Alejandra-Gonzalez-8-5-25-1.pdf)
