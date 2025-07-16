@@ -14,6 +14,6 @@ Hi! I'm Alejandra González (*she / her*) a Rust programmer and tech enthusiast,
 - I am currently a [Project Goal](https://rust-lang.github.io/rust-project-goals/) owner, for ["Optimizing Clippy & Linting"](https://rust-lang.github.io/rust-project-goals/2024h2/optimize-clippy.html)
 - I've been nominated for the [Google Open Source Peer Bonus award](https://opensource.google/documentation/reference/growing/peer-bonus).
 
-[You can check my "About me" page for cooler effects! (Please I wasted a lot of time just building that cool thing)](https://goose.love)
+[You can check my "About me" page for cooler effects! (Please I wasted a lot of time just building that cool thing)](https://www.goose.love)
 
 [If you're interested in what I do, checkout my CV! :heart:](https://github.com/blyxyas/Blyxyas/blob/main/Alejandra-Gonzalez-8-5-25-1.pdf)
