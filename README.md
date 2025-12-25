@@ -22,4 +22,5 @@ I:
 
 [You can check my "About me" page for cooler effects! (Please I wasted a lot of time just building that cool thing)](https://www.goose.love)
 
-[If you're interested in what I do, checkout my CV! :heart:](https://github.com/blyxyas/Blyxyas/blob/main/Alejandra-Gonzalez-8-5-25-1.pdf)
+[If you're interested in what I do, checkout my CV! (Last updated Dec. 2025) :heart:](https://github.com/user-attachments/files/24339747/Alejandra.Gonzalez.-.Resume-1.pdf)
+
