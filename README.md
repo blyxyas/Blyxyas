@@ -17,7 +17,7 @@ I:
 - Have given some talks:
   - [RustChinaConf2025](https://www.bilibili.com/video/BV1yFn8z4E2m/)
   - [Kangrejos 2025](https://kangrejos.com/2025)
-- Have been featured in Maintaine.rs, and the Rust Bytes Newsletter
+- Have been featured in Maintaine.rs, and the Rust Bytes Newsletter, and gave talks at Rust In China 2025, Rust-For-Linux Kangrejos 2025 and Rust In Paris 2026
 - Have two beautiful cats, maybe the most important fact about me.
 
 [You can check my "About me" page for cooler effects! (Please I wasted a lot of time just building that cool thing)](https://www.goose.love)
